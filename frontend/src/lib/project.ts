@@ -9,6 +9,20 @@ interface ProjectsConfig {
 export const projectConfig: ProjectsConfig = {
 	stack: [
 		{
+			name: 'MorteSense',
+			description: 'This is a description of the project that I worked on at MorteSense',
+			tags: ['reactjs', 'fastapi', 'postgresql', 'github actions', 'raspberry pi'],
+			href: siteConfig.project.mortesense,
+			host: 'github.com'
+		},
+		{
+			name: 'Starbucks Enterprise',
+			description: 'This is a description of the project that I worked on at Starbucks',
+			tags: ['typescript', 'svelte', 'sapper', 'tailwindcss', 's3', 'cloudfront', 'github actions'],
+			href: siteConfig.project.starbucks,
+			host: 'github.com'
+		},
+		{
 			name: 'MeetMinder',
 			description: 'In-progress: Calendar app that helps you schedule meetings with your friends',
 			tags: ['typescript', 'sveltekit', 'postgresql', 'tailwindcss', 'golang'],
@@ -27,20 +41,6 @@ export const projectConfig: ProjectsConfig = {
 			description: 'A platform for farmers to sell their produce directly to consumers.',
 			tags: ['sveltekit', 'scss', 'bun', 'hono', 'mysql'],
 			href: siteConfig.project.ifarmo,
-			host: 'github.com'
-		},
-		{
-			name: 'MorteSense',
-			description: 'This is a description of the project that I worked on at MorteSense',
-			tags: ['reactjs', 'fastapi', 'postgresql', 'github actions', 'raspberry pi'],
-			href: siteConfig.project.mortesense,
-			host: 'github.com'
-		},
-		{
-			name: 'Starbucks Enterprise',
-			description: 'This is a description of the project that I worked on at Starbucks',
-			tags: ['typescript', 'svelte', 'sapper', 'tailwindcss', 's3', 'cloudfront', 'github actions'],
-			href: siteConfig.project.starbucks,
 			host: 'github.com'
 		},
 		{
