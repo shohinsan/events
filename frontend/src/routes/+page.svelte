@@ -34,15 +34,15 @@
 				<img
 					src={me}
 					alt="Shohin's Pictures"
-					class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
 				/>
 			</div>
 		</div>
 		<div class="lg:order-first lg:row-span-2">
-			<h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+			<h1 class="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
 				I’m Shohin Abdulkhamidov, an inspiring Software Engineer based in California.
 			</h1>
-			<div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+			<div class="mt-6 space-y-7 text-base text-zinc-400">
 				<p>
 					A
 				</p>
@@ -85,7 +85,7 @@
 				</ul>
 			{/each}
 
-			<div class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40" />
+			<div class="mt-8 border-t pt-8 border-zinc-700/40" />
 
 			{#each linkConfig.personalLinks as { name, href, icon }}
 				<ul
