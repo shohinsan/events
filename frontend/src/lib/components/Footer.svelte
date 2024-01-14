@@ -5,8 +5,8 @@
     
 </script>
 
-<footer class="my-16 flex-none">
-	<div class="border-t pb-16 pt-10 border-zinc-700/40">
+<footer class="mt-16 sm:mt-52 flex-none">
+	<div class="border-t pb-28 sm:pb-10 pt-10 border-zinc-700/40">
 		<div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
 			<div
 				class="flex flex-wrap justify-center gap-y-1 text-sm font-medium text-zinc-200"
