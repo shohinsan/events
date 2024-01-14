@@ -3,7 +3,7 @@
 
 	const handleSubmit = (e: Event) => {
 		e.preventDefault();
-		
+
 		const form = e.target as HTMLFormElement;
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData.entries());
@@ -26,7 +26,6 @@
 				setTimeout(() => (status = ''), 5000);
 			});
 	};
-	
 </script>
 
 <div class="mt-16 sm:mt-32">
@@ -59,6 +58,7 @@
 				<input
 					placeholder="Name"
 					aria-label="Name"
+					required
 					type="text"
 					name="name"
 					class="min-w-0 flex-auto appearance-none rounded-md
@@ -67,12 +67,11 @@
 				/>
 			</div>
 
-
 			<div class="mt-6 flex">
 				<input
 					type="email"
 					name="email"
-				
+					required
 					placeholder="Email address"
 					aria-label="Email address"
 					class="min-w-0 flex-auto appearance-none rounded-md
@@ -84,6 +83,7 @@
 			<div class="mt-6 flex">
 				<textarea
 					name="message"
+					required
 					placeholder="Message"
 					aria-label="Message"
 					rows="4"

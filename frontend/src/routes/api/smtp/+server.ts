@@ -1,7 +1,9 @@
 import type { Data } from '$customTypes';
 import { error, json } from '@sveltejs/kit';
+import { EMAIL_SERVICE_API } from '$env/static/private'
 
-const API_ENDPOINT = 'https://api.web3forms.com';
+
+const API_ENDPOINT = process.env.EMAIL_SERVICE_API;
 
 export async function POST({ request }) {
 	const body: Data = await request.json();
@@ -15,7 +17,7 @@ export async function POST({ request }) {
 	if (!body.message) {
 		throw error(400, 'Message is required');
 	}
-    
+
 	const response = await fetch(`${API_ENDPOINT}/submit`, { 
 		method: 'POST',
 		headers: {
