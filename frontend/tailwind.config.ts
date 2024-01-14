@@ -116,7 +116,8 @@ export default {
         144: '36rem'
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        graffiti: ['GraffitiFont', 'sans-serif']
       }
     }
   },
