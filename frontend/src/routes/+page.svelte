@@ -24,7 +24,6 @@
 			console.error('Error fetching PDF or initiating download:', error);
 		}
 	};
-	
 </script>
 
 <div class="mt-16 sm:mt-32">
@@ -39,21 +38,29 @@
 			</div>
 		</div>
 		<div class="lg:order-first lg:row-span-2">
-			<h1 class="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
+			<h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
 				I’m Shohin Abdulkhamidov, an inspiring Software Engineer based in California.
 			</h1>
 			<div class="mt-6 space-y-7 text-base text-zinc-400">
 				<p>
-					A
+					Born and raised in Tajikistan, I moved to the United States in 2017 to pursue my dream of
+					becoming a Software Engineer. I graduated from San Jose State University, majoring in
+					Software Engineering. I am passionate about building software that makes a difference in
+					people's lives.
 				</p>
 				<p>
-					B
+					When I am not coding, I enjoy playing soccer and hiking. Gaming is also another passion of
+					mine, and I'm always looking for ways to add more excitement to my gaming experience or
+					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
 				<p>
-					C
+					Here are a few technologies I've been working with recently: SvelteKit, Java, and Python.
+					Now, I'm thinking about expanding my skill set even further by learning Golang and getting
+					further into understanding at api architecture protocols before practicing. 
 				</p>
 				<p>
-					D
+					Feel free to reach out if you're looking for a new grad developer, have a question, or just want to
+					connect.
 				</p>
 			</div>
 		</div>
@@ -105,38 +112,6 @@
 					</li>
 				</ul>
 			{/each}
-
-			<!--                 
-                <li class="flex">
-                        <a href="###" class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
-                            <div class="h-6 w-6 flex-none fill-zinc-500 transition hover:bg-teal-500">
-                                <Instagram />
-                                <
-                            </div>
-                            <p class="ml-4"></p>    
-                        </a>
-    
-                </li> -->
-
-			<!-- <a href="#" icon={TwitterIcon}>
-            Follow on Twitter
-          </a>
-          <a href="#" icon={InstagramIcon} className="mt-4">
-            Follow on Instagram
-          </a>
-          <a href="#" icon={GitHubIcon} className="mt-4">
-            Follow on GitHub
-          </SocialLink>
-          <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-            Follow on LinkedIn
-          </SocialLink>
-          <SocialLink
-            href="mailto:spencer@planetaria.tech"
-            icon={MailIcon}
-            className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-          >
-            spencer@planetaria.tech
-          </SocialLink> -->
 		</div>
 	</div>
 </div>

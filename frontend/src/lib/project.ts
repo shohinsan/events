@@ -10,29 +10,29 @@ export const projectConfig: ProjectsConfig = {
 	stack: [
 		{
 			name: 'MeetMinder',
-			description: 'This is a description of the project that I worked on at MeetMinder',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			description: 'In-progress: Calendar app that helps you schedule meetings with your friends',
+			tags: ['typescript', 'sveltekit', 'postgresql', 'tailwindcss', 'golang'],
 			href: siteConfig.project.meetminder,
 			host: 'github.com'
 		},
 		{
 			name: 'RootsRise',
-			description: 'This is a description of the project that I worked on at RootsRise',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			description: 'In-progress: a static web app of my family tree. Collecting data at the moment.',
+			tags: ['sveltekit', 'css', 'typescript'],
 			href: siteConfig.project.rootsrise,
 			host: 'github.com'
 		},
 		{
 			name: 'iFarmo',
-			description: 'This is a description of the project that I worked on at iFarmo',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			description: 'A platform for farmers to sell their produce directly to consumers.',
+			tags: ['sveltekit', 'scss', 'bun', 'hono', 'mysql'],
 			href: siteConfig.project.ifarmo,
 			host: 'github.com'
 		},
 		{
 			name: 'MorteSense',
 			description: 'This is a description of the project that I worked on at MorteSense',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			tags: ['reactjs', 'fastapi', 'postgresql', 'github actions', 'raspberry pi'],
 			href: siteConfig.project.mortesense,
 			host: 'github.com'
 		},
@@ -52,15 +52,15 @@ export const projectConfig: ProjectsConfig = {
 		},
 		{
 			name: 'ScholarRabbit',
-			description: 'This is a description of the project that I worked on at SJSU',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			description: 'Note taking app for students',
+			tags: ['flask', 'sqlite', 'bootstrap'],
 			href: siteConfig.project.scholarrabbit,
 			host: 'github.com'
 		},
 		{
 			name: 'Postwitter',
-			description: 'This is a description of the project that I worked on at SJSU',
-			tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
+			description: 'A platform for sharing your thoughts with the world',
+			tags: ['swift', 'firebase', 'cocoapods', 'xcode'],
 			href: siteConfig.project.twitter,
 			host: 'github.com'
 		},
