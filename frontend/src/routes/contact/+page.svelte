@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact - Connect with Shohin </title>
+	<title>Contact - Connect with Shohin</title>
 	<meta name="twitter:title" content="Contact form" />
 	<meta name="twitter:description" content="Get in touch with Shohin" />
 	<meta name="Description" content="Get in touch with Shohin" />
@@ -45,7 +45,13 @@
 			<p class="mt-6 text-base text-zinc-400">
 				I’ve worked on tons of little projects over the years but these are the ones that I’m most
 				proud of. Many of them are open-source, so if you see something that piques your interest,
-				check out the code and contribute if you have ideas for how it can be improved.
+				check out the code and contribute if you have ideas for how it can be improved. <strong
+					>Besides that</strong
+				>, I’m always looking for new opportunities to learn and grow as a developer, based in
+				United States, so if you have a project that you think I might be interested in, please
+				don’t hesitate to reach out. <strong>Last but not least</strong>, my personal website was
+				built with SvelteKit, TypeScript, TailwindCSS, deployed to Cloudflare Pages, and enabled PWA
+				for download and offline use.
 			</p>
 		</div>
 
