@@ -21,7 +21,15 @@ declare global {
 	declare interface Document {
 		startViewTransition(callback: () => void): void
 	}
+}
 
+interface Data {
+	access_key?: string
+	subject?: string
+	from_name?: string
+	name?: string
+	email?: string
+	message?: string
 }
 
 interface NavItem {
@@ -46,4 +54,4 @@ interface ProjectItem {
 }
 
 
-export { NavItem, LinkItem, ProjectItem, Window, Document };
+export { Data,  NavItem, LinkItem, ProjectItem, Window, Document };
