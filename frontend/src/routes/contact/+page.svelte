@@ -28,6 +28,13 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Contact - Connect with Shohin </title>
+	<meta name="twitter:title" content="Contact form" />
+	<meta name="twitter:description" content="Get in touch with Shohin" />
+	<meta name="Description" content="Get in touch with Shohin" />
+</svelte:head>
+
 <div class="mt-16 sm:mt-32">
 	<div
 		class="grid grid-cols-1 gap-y-16 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12 lg:max-w-[700px]"

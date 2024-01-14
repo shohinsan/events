@@ -1,11 +1,10 @@
 import { dev } from '$app/environment'
-import Logo from '$assets/Logo.svelte'
 
 export const siteConfig = {
-	name: 'LifeEvents',
+	name: 'Shohin Abdulkhamidov - Personal Portfolio Website', 
 	url: dev ? 'http://localhost:5173' : 'https://shohin.pages.dev',
 	ogImage: '../me.png',
-	description: 'This is a personal website for Shohin Abdulkhamidov to showcase his projects and contact information.',
+	description: 'This is a personal website for Shohin Abdulkhamidov to showcase his projects, work experience and contact information.',
 	links: {
 		github: 'https://github.com/shohinsan',
 		linkedin: 'https://www.linkedin.com/in/shohin-abdulkhamidov/',

@@ -1,1 +1,0 @@
-Your email has been sent. Thank you for contacting me!

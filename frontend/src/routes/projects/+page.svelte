@@ -3,6 +3,13 @@
 	import Link from '$assets/Link.svelte';
 </script>
 
+<svelte:head>
+	<title>Projects - Check out my work experience</title>
+	<meta name="twitter:title" content="Project experiences" />
+	<meta name="twitter:description" content="Dare you check out my projects" />
+	<meta name="Description" content="Dare you check out my projects" />
+</svelte:head>
+
 <div class="mt-16 sm:mt-32">
 	<div
 		class="grid grid-cols-1 gap-y-16 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12 lg:max-w-[700px]"
