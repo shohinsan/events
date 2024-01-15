@@ -15,13 +15,13 @@ const exceptions = (body: Data) => {
 	if (!body.message) {
 		throw error(400, 'Message is required');
 	}
-	if (body.name.length < 10) {
+	if (body.name.length < 8) {
 		throw error(400, 'Name must be at least 10 characters');
 	}
-	if (body.email.length < 10) {
+	if (body.email.length < 8) {
 		throw error(400, 'Email must be at least 8 characters');
 	}
-	if (body.message.length < 50) {
+	if (body.message.length < 35) {
 		throw error(400, 'Message must be at least 50 characters');
 	}
 	if (!isValidEmail(body.email)) {

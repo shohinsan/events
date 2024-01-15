@@ -71,7 +71,7 @@
 				<input
 					name="name"
 					type="text"
-					placeholder="Name"
+					placeholder="Name (min. 8 chars)"
 					aria-label="Name"
 					required
 					class="min-w-0 flex-auto appearance-none rounded-md
@@ -85,7 +85,7 @@
 					type="email"
 					name="email"
 					required
-					placeholder="Email address"
+					placeholder="Email address (min. 8 chars)"
 					aria-label="Email address"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
@@ -96,7 +96,7 @@
 			<div class="mt-6 flex">
 				<textarea
 					name="message"
-					placeholder="Message"
+					placeholder="Message (min. 35 chars)"
 					aria-label="Message"
 					required
 					rows="4"
