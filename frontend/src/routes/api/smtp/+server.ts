@@ -1,6 +1,5 @@
 import type { Data } from '$customTypes';
 import { error, json } from '@sveltejs/kit';
-import { ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
 import type { RequestHandler } from './$types';
 
 const API_ENDPOINT = 'https://api.web3forms.com';
@@ -19,9 +18,9 @@ const exceptions = (body: Data) => {
 
 const properties = (body: Data) => {
 	return {
-		access_key: ACCESS_KEY, 
-		subject: SUBJECT, 
-		from_name: FROM_NAME,
+		access_key: 'ba3c1bc3-5ea1-4468-b24f-d712fecd17f7', 
+		subject: 'Personal Website Contact Form', 
+		from_name: 'NEW MESSAGE',
 		name: body.name,
 		email: body.email,
 		message: body.message
