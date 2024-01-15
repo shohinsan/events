@@ -1,30 +1,30 @@
 <script lang="ts">
 	let status = '';
 
-	const handleSubmit = (e: Event) => {
+	const handleSubmit = async (e: Event) => {
 		e.preventDefault();
 
 		const form = e.target as HTMLFormElement;
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData.entries());
 
-		fetch('/api/smtp', {
-			method: 'POST',
-			body: JSON.stringify(data),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
-			.then((res) => {
-				status = 'success';
-			})
-			.catch((err) => {
-				status = 'error';
-			})
-			.finally(() => {
-				form.reset();
-				setTimeout(() => (status = ''), 5000);
+		try {
+			const response = await fetch('/api/smtp', {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			});
+			if (response.ok) {
+				status = 'success';
+			} 
+		} catch (err) {
+			status = 'error';
+		} finally {
+			form.reset();
+			setTimeout(() => (status = ''), 5000);
+		}
 	};
 </script>
 
@@ -63,17 +63,17 @@
 				Please fill out the form below and I'll get back to you as soon as possible.
 			</p>
 
-			<input type="hidden" name="access_key" value="ba3c1bc3-5ea1-4468-b24f-d712fecd17f7" />
-			<input type="hidden" name="subject" value="Personal Website Contact Form" />
-			<input type="hidden" name="from_name" value="NEW MESSAGE" />
+			<input type="hidden" name="access_key" />
+			<input type="hidden" name="subject" />
+			<input type="hidden" name="from_name" />
 
 			<div class="mt-6 flex">
 				<input
+					name="name"
+					type="text"
 					placeholder="Name"
 					aria-label="Name"
 					required
-					type="text"
-					name="name"
 					class="min-w-0 flex-auto appearance-none rounded-md
 			border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
 			focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
@@ -96,9 +96,9 @@
 			<div class="mt-6 flex">
 				<textarea
 					name="message"
-					required
 					placeholder="Message"
 					aria-label="Message"
+					required
 					rows="4"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5

@@ -1,13 +1,12 @@
 import type { Data } from '$customTypes';
 import { error, json } from '@sveltejs/kit';
-import { EMAIL_SERVICE_API } from '$env/static/private'
+import { EMAIL_SERVICE_API } from '$env/static/private';
+import { ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
+import type { RequestHandler } from './$types';
 
+const API_ENDPOINT = EMAIL_SERVICE_API; //
 
-const API_ENDPOINT = process.env.EMAIL_SERVICE_API;
-
-export async function POST({ request }) {
-	const body: Data = await request.json();
-
+const exceptions = (body: Data) => {
 	if (!body.name) {
 		throw error(400, 'Name is required');
 	}
@@ -17,17 +16,52 @@ export async function POST({ request }) {
 	if (!body.message) {
 		throw error(400, 'Message is required');
 	}
+};
 
-	const response = await fetch(`${API_ENDPOINT}/submit`, { 
+const properties = (body: Data) => {
+	return {
+		access_key: ACCESS_KEY, 
+		subject: SUBJECT, 
+		from_name: FROM_NAME,
+		name: body.name,
+		email: body.email,
+		message: body.message
+	};
+};
+
+export const POST: RequestHandler = async ({ request }) => {
+	const body: Data = await request.json();
+	exceptions(body);
+	const props = properties(body);
+
+	const response = await fetch(`${API_ENDPOINT}/submit`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json'
 		},
-		body: JSON.stringify(body)
+		body: JSON.stringify(props)
 	});
 
-	if (response.ok) {
-		return json({ ok: true });
-	}
-}
+	const res = await response.text();
+	console.log('res: ', res);
+
+	return json({
+		ok: true,
+		status: response.status,
+		data: res
+	});
+} 
+
+// try {
+// 	const responseText = await response.text();
+// 	console.error('responseText: ', responseText);
+
+// 	if (response.ok) {
+// 		console.log('responseText: ', responseText);
+// 	} else {
+// 		return new Response('Internal Server Error', { status: 500 });
+// 	}
+// } catch (err) {
+// 	return error(500, 'Internal Server Error');
+// }
