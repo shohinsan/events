@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Logo from '$lib/icons/Logo.svelte';
 	import { navConfig } from '$lib/nav';
 	import { page } from '$app/stores';
 </script>
