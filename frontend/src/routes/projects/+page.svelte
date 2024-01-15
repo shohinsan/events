@@ -10,7 +10,7 @@
 	<meta name="Description" content="Dare you check out my projects" />
 </svelte:head>
 
-<div class="mt-16 sm:mt-32">
+<div class="my-16 sm:mt-32 sm:mb-52">
 	<div
 		class="grid grid-cols-1 gap-y-16 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12 lg:max-w-[700px]"
 	>

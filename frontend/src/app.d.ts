@@ -35,7 +35,7 @@ interface Data {
 interface NavItem {
 	name?: string;
 	href?: string;
-	icon?: any;
+	icon?: ComponentType;
 }
 
 interface LinkItem {
@@ -53,5 +53,10 @@ interface ProjectItem {
 	host?: string;
 }
 
+interface EventItem {
+    date?: string | number
+	description?: string;
+}
 
-export { Data,  NavItem, LinkItem, ProjectItem, Window, Document };
+
+export { Data,  NavItem, LinkItem, ProjectItem, EventItem, Window, Document };

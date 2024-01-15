@@ -5,7 +5,7 @@
 
 <div
 	class="fixed sm:hidden w-full h-16 -translate-x-1/2 bg-black  bottom-0 left-1/2">
-	<div class="grid h-full grid-cols-3 mx-auto">
+	<div class="grid h-full grid-cols-4 mx-auto">
 		{#each navConfig.mobileNavigation as { name, href, icon }, i}
 			<a href={href} data-tooltip-target={'tooltip-' + {href}}
 				class={`inline-flex flex-col items-center justify-center group
