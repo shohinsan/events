@@ -8,8 +8,15 @@
 		const dateB = b.date ? new Date(b.date) : new Date(0);
 		return dateB.getTime() - dateA.getTime();
 	});
-  
+
 </script>
+
+<svelte:head>
+	<title>Life events - my life experience</title>
+	<meta name="twitter:title" content="Life events" />
+	<meta name="twitter:description" content="Things I have experienced in my life" />
+	<meta name="Description" content="Things I have experienced in my life" />
+</svelte:head>
 
 <div class="mt-16 sm:mt-32 sm:mb-52">
 	<div
