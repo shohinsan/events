@@ -1,6 +1,7 @@
 import type { Data } from '$customTypes';
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
+import { isValidEmail } from '$source/lib/utils';
 
 const API_ENDPOINT = 'https://api.web3forms.com';
 
@@ -14,12 +15,24 @@ const exceptions = (body: Data) => {
 	if (!body.message) {
 		throw error(400, 'Message is required');
 	}
+	if (body.name.length < 10) {
+		throw error(400, 'Name must be at least 10 characters');
+	}
+	if (body.email.length < 10) {
+		throw error(400, 'Email must be at least 8 characters');
+	}
+	if (body.message.length < 50) {
+		throw error(400, 'Message must be at least 50 characters');
+	}
+	if (!isValidEmail(body.email)) {
+		throw error(400, 'Invalid email format');
+	}
 };
 
 const properties = (body: Data) => {
 	return {
-		access_key: 'ba3c1bc3-5ea1-4468-b24f-d712fecd17f7', 
-		subject: 'Personal Website Contact Form', 
+		access_key: 'ba3c1bc3-5ea1-4468-b24f-d712fecd17f7',
+		subject: `${body.name} sent a message from Personal Website Contact Form`,
 		from_name: 'NEW MESSAGE',
 		name: body.name,
 		email: body.email,
@@ -42,24 +55,10 @@ export const POST: RequestHandler = async ({ request }) => {
 	});
 
 	const res = await response.text();
-	console.log('res: ', res);
 
 	return json({
 		ok: true,
 		status: response.status,
 		data: res
 	});
-} 
-
-// try {
-// 	const responseText = await response.text();
-// 	console.error('responseText: ', responseText);
-
-// 	if (response.ok) {
-// 		console.log('responseText: ', responseText);
-// 	} else {
-// 		return new Response('Internal Server Error', { status: 500 });
-// 	}
-// } catch (err) {
-// 	return error(500, 'Internal Server Error');
-// }
+};
