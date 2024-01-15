@@ -9,7 +9,7 @@
 		<a href="/" class="flex items-center">
 			<span
 				class="ml-10 sm:ml-16 text-3xl font-bold text-zinc-200
-			font-graffiti">Shohin A .</span
+			font-graffiti hover:text-teal-400">Shohin A .</span
 			>
 		</a>
 	</div>
