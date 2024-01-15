@@ -1,10 +1,9 @@
 import type { Data } from '$customTypes';
 import { error, json } from '@sveltejs/kit';
-import { EMAIL_SERVICE_API } from '$env/static/private';
 import { ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
 import type { RequestHandler } from './$types';
 
-const API_ENDPOINT = EMAIL_SERVICE_API || 'https://api.web3forms.com';
+const API_ENDPOINT = 'https://api.web3forms.com';
 
 const exceptions = (body: Data) => {
 	if (!body.name) {
