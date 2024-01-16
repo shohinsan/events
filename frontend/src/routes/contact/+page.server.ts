@@ -1,7 +1,6 @@
 import { fail } from '@sveltejs/kit';
-import { isValidEmail } from '$source/lib/utils';
-import { EMAIL_SERVICE_API } from '$env/static/private';
-import { ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
+import { utils } from '$lib';
+import { EMAIL_SERVICE_API, ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
 import type { Validation } from '$customTypes';
 
 const API_ENDPOINT = EMAIL_SERVICE_API;
@@ -83,7 +82,7 @@ const typedProps = ({
 		errors.messageLimit = 'Message must be at least 50 characters';
 	}
 
-	if (isValidEmail(email)) {
+	if (utils.isValidEmail(email)) {
 		errors.emailFormat =
 			'Supported domains as of today are: .com, .edu, .org, .io. Please use a valid email address.';
 	}

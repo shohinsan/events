@@ -1,14 +1,13 @@
 <script>
-	import Timeline from '$source/lib/components/Timeline.svelte';
-	import { formatDate } from '$source/lib/utils';
-	import { eventConfig } from '$lib/event';
+	import { Timeline } from '$components';
+	import { eventConfig } from '$lib';
+	import { utils } from '$lib';
 
 	eventConfig.events.sort((a, b) => {
 		const dateA = a.date ? new Date(a.date) : new Date(0);
 		const dateB = b.date ? new Date(b.date) : new Date(0);
 		return dateB.getTime() - dateA.getTime();
 	});
-
 </script>
 
 <svelte:head>
@@ -39,7 +38,7 @@
 							<div class="h-[0.0625rem] w-3.5 bg-gray-400" />
 							<div class="text-zinc-400 text-sm">
 								{#if date !== undefined}
-									{formatDate(new Date(date).toISOString())}
+									{utils.formatDate(new Date(date).toISOString())}
 								{/if}
 							</div>
 						</div>

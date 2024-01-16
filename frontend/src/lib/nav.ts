@@ -1,15 +1,12 @@
 import type { NavItem } from '$customTypes';
-import About from '$assets/About.svelte';
-import Projects from '$assets/Projects.svelte';
-import Contact from '$assets/Contact.svelte';
-import Calendar from './icons/Calendar.svelte';
+import { About, Projects, Contact, Calendar } from '$assets';
 
 interface NavigationConfig {
 	desktopNavigation: NavItem[];
 	mobileNavigation: NavItem[];
 }
 
-export const navConfig: NavigationConfig = {
+const navConfig: NavigationConfig = {
 	desktopNavigation: [
 		{ name: 'About', href: '/' },
 		{ name: 'Projects', href: '/projects' },
@@ -22,6 +19,7 @@ export const navConfig: NavigationConfig = {
 		{ name: 'Projects', href: '/projects', icon: Projects },
 		{ name: 'Life', href: '/life', icon: Calendar },
 		{ name: 'Contact', href: '/contact', icon: Contact }
-	],
-
+	]
 };
+
+export default navConfig;

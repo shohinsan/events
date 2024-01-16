@@ -1,6 +1,6 @@
 <script>
-	import { projectConfig } from '$lib/project';
-	import Link from '$assets/Link.svelte';
+	import { projectConfig } from '$lib';
+	import { Link } from '$assets';
 </script>
 
 <svelte:head>

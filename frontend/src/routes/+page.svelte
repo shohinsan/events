@@ -1,8 +1,8 @@
 <script>
-	import { linkConfig } from '$lib/link';
+	import { linkConfig } from '$lib';
 	import { page } from '$app/stores';
-	import Download from '$assets/Download.svelte';
-	import resume from '$source/resume.pdf';
+	import { Download } from '$assets';
+	import { resume } from '$source';
 
 	export let data;
 
@@ -26,7 +26,6 @@
 		}
 	};
 </script>
-
 
 <div class="my-16 sm:mt-32 sm:mb-52">
 	<div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -58,11 +57,11 @@
 				<p>
 					Here are a few technologies I've been working with recently: SvelteKit, Java, and Python.
 					Now, I'm thinking about expanding my skill set even further by learning Golang and getting
-					further into understanding at api architecture protocols before practicing. 
+					further into understanding at api architecture protocols before practicing.
 				</p>
 				<p>
-					Feel free to reach out if you're looking for a new grad developer, have a question, or just want to
-					connect.
+					Feel free to reach out if you're looking for a new grad developer, have a question, or
+					just want to connect.
 				</p>
 			</div>
 		</div>

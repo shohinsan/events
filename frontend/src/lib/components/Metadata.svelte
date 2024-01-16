@@ -13,7 +13,7 @@
     <meta name="description" content={siteConfig.description} />
     <meta name="keywords" content={siteConfig.keywords} />
     <meta name="author" content={siteConfig.name} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={siteConfig.ogImage} />
     <meta name="twitter:site" content={siteConfig.url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={siteConfig.description} />

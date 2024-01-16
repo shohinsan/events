@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { dev } from '$app/environment';
 
 	export let title: string;
 

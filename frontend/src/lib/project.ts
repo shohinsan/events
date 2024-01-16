@@ -1,12 +1,11 @@
 import type { ProjectItem } from '$customTypes';
-import me from '$source/me.png';
 import { siteConfig } from '$lib/site';
 
 interface ProjectsConfig {
 	stack: ProjectItem[];
 }
 
-export const projectConfig: ProjectsConfig = {
+const projectConfig: ProjectsConfig = {
 	stack: [
 		{
 			name: 'MorteSense',
@@ -67,3 +66,5 @@ export const projectConfig: ProjectsConfig = {
 	
 	]
 };
+
+export default projectConfig;

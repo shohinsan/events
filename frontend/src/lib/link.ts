@@ -1,9 +1,6 @@
 import type { LinkItem } from '$customTypes';
-import GitHub from '$assets/GitHub.svelte';
-import LinkedIn from '$assets/LinkedIn.svelte';
-import Telegram from '$assets/Telegram.svelte';
-import Email from '$assets/Email.svelte';
-import Instagram from '$assets/Instagram.svelte';
+import { GitHub, LinkedIn, Telegram, Email, Instagram } from '$assets';
+
 import { siteConfig } from '$lib/site';
 
 interface LinksConfig {
@@ -11,7 +8,7 @@ interface LinksConfig {
 	personalLinks: LinkItem[];
 }
 
-export const linkConfig: LinksConfig = {
+const linkConfig: LinksConfig = {
 	professionalLinks: [
 		{ name: 'Github', href: siteConfig.links.github, icon: GitHub },
 		{ name: 'LinkedIn', href: siteConfig.links.linkedin, icon: LinkedIn }
@@ -23,3 +20,5 @@ export const linkConfig: LinksConfig = {
 		{ name: 'Instagram', href: siteConfig.links.instagram, icon: Instagram }
 	]
 };
+
+export default linkConfig;

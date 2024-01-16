@@ -1,6 +1,6 @@
 <script>
 	export let currentYear = new Date().getFullYear();
-    import { navConfig } from '$lib/nav';
+    import { navConfig } from '$lib';
     import { page } from '$app/stores';
     
 </script>

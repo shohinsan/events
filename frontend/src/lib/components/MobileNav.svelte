@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { navConfig } from '$lib/nav';
+	import { navConfig } from '$lib';
 </script>
 
 <div

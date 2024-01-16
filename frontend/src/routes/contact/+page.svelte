@@ -8,6 +8,7 @@
 		status = true;
 		setTimeout(() => (status = false), 4000);
 	}
+	
 </script>
 
 <svelte:head>
