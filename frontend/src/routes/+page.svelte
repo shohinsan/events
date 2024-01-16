@@ -1,9 +1,10 @@
 <script>
-	import me from '$source/me.png';
 	import { linkConfig } from '$lib/link';
 	import { page } from '$app/stores';
 	import Download from '$assets/Download.svelte';
 	import resume from '$source/resume.pdf';
+
+	export let data;
 
 	const download = async () => {
 		try {
@@ -26,12 +27,13 @@
 	};
 </script>
 
+
 <div class="my-16 sm:mt-32 sm:mb-52">
 	<div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
 		<div class="lg:pl-20">
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
-					src={me}
+					src={data.myimage}
 					alt="Shohin's Pictures"
 					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
 				/>
