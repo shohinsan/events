@@ -1,31 +1,13 @@
 <script lang="ts">
-	let status = '';
-
-	const handleSubmit = async (e: Event) => {
-		e.preventDefault();
-
-		const form = e.target as HTMLFormElement;
-		const formData = new FormData(form);
-		const data = Object.fromEntries(formData.entries());
-
-		try {
-			const response = await fetch('/api/smtp', {
-				method: 'POST',
-				body: JSON.stringify(data),
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			});
-			if (response.ok) {
-				status = 'success';
-			} 
-		} catch (err) {
-			status = 'error';
-		} finally {
-			form.reset();
-			setTimeout(() => (status = ''), 5000);
-		}
-	};
+	let status = false;
+	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
+	export let form: ActionData;
+	
+	function toast() {
+		status = true;
+		setTimeout(() => (status = false), 4000);
+	}
 </script>
 
 <svelte:head>
@@ -55,7 +37,15 @@
 			</p>
 		</div>
 
-		<form on:submit={handleSubmit} class="rounded-2xl mt-10 border p-6 border-zinc-700/40">
+		<form
+			class="rounded-2xl mt-10 border p-6 border-zinc-700/40"
+			use:enhance={() =>
+				({ update }) => {
+					update({ reset: true });
+					toast();
+				}}
+			method="POST"
+		>
 			<h2 class="flex text-sm font-semibold text-zinc-100">
 				<span>Email Form</span>
 			</h2>
@@ -70,22 +60,30 @@
 			<div class="mt-6 flex">
 				<input
 					name="name"
+					autocomplete="name"
 					type="text"
-					placeholder="Name (min. 8 chars)"
+					placeholder="Name"
 					aria-label="Name"
-					required
 					class="min-w-0 flex-auto appearance-none rounded-md
 			border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
 			focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
 				/>
 			</div>
 
+			{#if form?.errors?.nameMissing}
+				<p class="text-red-500 mt-3">{form.errors.nameMissing}</p>
+			{/if}
+
+			{#if form?.errors?.nameLimit}
+				<p class="text-red-500 mt-3">{form.errors.nameLimit}</p>
+			{/if}
+
 			<div class="mt-6 flex">
 				<input
-					type="email"
 					name="email"
-					required
-					placeholder="Email address (min. 8 chars)"
+					autocomplete="email"
+					type="email"
+					placeholder="Email address"
 					aria-label="Email address"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
@@ -93,18 +91,37 @@
 				/>
 			</div>
 
+			{#if form?.errors?.emailMissing}
+				<p class="text-red-500 mt-3">{form.errors.emailMissing}</p>
+			{/if}
+
+			{#if form?.errors?.emailLimit}
+				<p class="text-red-500 mt-3">{form.errors.emailLimit}</p>
+			{/if}
+
+			{#if form?.errors?.emailFormat}
+				<p class="text-red-500 mt-3">{form.errors.emailFormat}</p>
+			{/if}
+
 			<div class="mt-6 flex">
 				<textarea
 					name="message"
-					placeholder="Message (min. 35 chars)"
+					placeholder="Message"
 					aria-label="Message"
-					required
 					rows="4"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
                         focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
 				/>
 			</div>
+
+			{#if form?.errors?.messageMissing}
+				<p class="text-red-500 mt-3">{form.errors.messageMissing}</p>
+			{/if}
+
+			{#if form?.errors?.messageLimit}
+				<p class="text-red-500 mt-3">{form.errors.messageLimit}</p>
+			{/if}
 
 			<div class="mt-6">
 				<button
@@ -116,9 +133,9 @@
 			</div>
 
 			<div class="mt-5 text-teal-400">
-				{#if status === 'success'}
+				{#if status}
 					<p>Email has been sent</p>
-				{:else if status === 'error'}
+				{:else}
 					<p>Something went wrong. Please try again.</p>
 				{/if}
 			</div>
