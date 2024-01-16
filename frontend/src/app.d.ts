@@ -58,5 +58,15 @@ interface EventItem {
 	description?: string;
 }
 
+interface Validation {
+	nameMissing?: string;
+	emailMissing?: string;
+	messageMissing?: string;
+	nameLimit?: string;
+	emailLimit?: string;
+	messageLimit?: string;
+	emailFormat?: string;
+}
 
-export { Data,  NavItem, LinkItem, ProjectItem, EventItem, Window, Document };
+
+export { Data,  NavItem, LinkItem, ProjectItem, EventItem, Validation, Window, Document };

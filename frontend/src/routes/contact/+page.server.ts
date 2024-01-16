@@ -2,18 +2,10 @@ import { fail } from '@sveltejs/kit';
 import { isValidEmail } from '$source/lib/utils';
 import { EMAIL_SERVICE_API } from '$env/static/private';
 import { ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
+import type { Validation } from '$customTypes';
 
 const API_ENDPOINT = EMAIL_SERVICE_API;
 
-interface Validation {
-	nameMissing?: string;
-	emailMissing?: string;
-	messageMissing?: string;
-	nameLimit?: string;
-	emailLimit?: string;
-	messageLimit?: string;
-	emailFormat?: string;
-}
 export const actions = {
 	default: async ({ request }) => {
 		const startTime = performance.now();
@@ -53,6 +45,8 @@ export const actions = {
 		return responseData;
 	}
 };
+
+// Helpers
 
 const typedProps = ({
 	name,
