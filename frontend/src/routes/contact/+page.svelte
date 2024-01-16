@@ -135,8 +135,6 @@
 			<div class="mt-5 text-teal-400">
 				{#if status}
 					<p>Email has been sent</p>
-				{:else}
-					<p>Something went wrong. Please try again.</p>
 				{/if}
 			</div>
 		</form>
