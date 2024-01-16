@@ -23,18 +23,10 @@
 		class="grid grid-cols-1 gap-y-16 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12 lg:max-w-[700px]"
 	>
 		<div class="lg:order-first lg:row-span-2">
-			<h2 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">Contact me here</h2>
+			<h2 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">Contact</h2>
 
 			<p class="mt-6 text-base text-zinc-400">
-				I’ve worked on tons of little projects over the years but these are the ones that I’m most
-				proud of. Many of them are open-source, so if you see something that piques your interest,
-				check out the code and contribute if you have ideas for how it can be improved. <strong
-					>Besides that</strong
-				>, I’m always looking for new opportunities to learn and grow as a developer, based in
-				United States, so if you have a project that you think I might be interested in, please
-				don’t hesitate to reach out. <strong>Last but not least</strong>, my personal website was
-				built with SvelteKit, TypeScript, TailwindCSS, deployed to Cloudflare Pages, and enabled PWA
-				for download and offline use.
+				Please feel free to contact me if you have any questions or would like to discuss a project.
 			</p>
 		</div>
 

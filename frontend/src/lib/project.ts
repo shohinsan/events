@@ -9,15 +9,15 @@ const projectConfig: ProjectsConfig = {
 	stack: [
 		{
 			name: 'MorteSense',
-			description: 'This is a description of the project that I worked on at MorteSense',
+			description: 'DIY home security system that detects motion and sends alerts to your phone.',
 			tags: ['reactjs', 'fastapi', 'postgresql', 'github actions', 'raspberry pi'],
 			href: siteConfig.project.mortesense,
 			host: 'github.com'
 		},
 		{
 			name: 'Starbucks Enterprise',
-			description: 'This is a description of the project that I worked on at Starbucks',
-			tags: ['typescript', 'svelte', 'sapper', 'tailwindcss', 's3', 'cloudfront', 'github actions'],
+			description: 'End-to-End Enterprise Software for ordering coffee',
+			tags: ['gcp', 'gke', 'spring-boot', 'cloud sql', 'java', 'docker'],
 			href: siteConfig.project.starbucks,
 			host: 'github.com'
 		},

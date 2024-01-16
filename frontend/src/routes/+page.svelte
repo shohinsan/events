@@ -60,6 +60,10 @@
 					further into understanding at api architecture protocols before practicing.
 				</p>
 				<p>
+					To mention, my personal website was built with SvelteKit, TypeScript, TailwindCSS,
+					deployed to Cloudflare Pages, and enabled PWA for download and offline use.
+				</p>
+				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or
 					just want to connect.
 				</p>
