@@ -1,8 +1,13 @@
 <script lang="ts">
-	let status = '';
+	let status = false;
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
 	export let form: ActionData;
+	
+	function toast() {
+		status = true;
+		setTimeout(() => (status = false), 4000);
+	}
 </script>
 
 <svelte:head>
@@ -37,6 +42,7 @@
 			use:enhance={() =>
 				({ update }) => {
 					update({ reset: true });
+					toast();
 				}}
 			method="POST"
 		>
@@ -127,9 +133,9 @@
 			</div>
 
 			<div class="mt-5 text-teal-400">
-				{#if status === 'success'}
+				{#if status}
 					<p>Email has been sent</p>
-				{:else if status === 'error'}
+				{:else}
 					<p>Something went wrong. Please try again.</p>
 				{/if}
 			</div>

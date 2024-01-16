@@ -1,7 +1,8 @@
 import { fail } from '@sveltejs/kit';
 import { isValidEmail } from '$source/lib/utils';
+import { EMAIL_SERVICE_API, ACCESS_KEY, SUBJECT, FROM_NAME } from '$env/static/private';
 
-const API_ENDPOINT = 'https://api.web3forms.com';
+const API_ENDPOINT = EMAIL_SERVICE_API;
 
 interface Validation {
 	nameMissing?: string;
@@ -67,32 +68,39 @@ const typedProps = ({
 	if (!name) {
 		errors.nameMissing = 'Name is required';
 	}
+
 	if (!email) {
 		errors.emailMissing = 'Email is required';
 	}
+
 	if (!message) {
 		errors.messageMissing = 'Message is required';
 	}
+
 	if (name.length < 8) {
 		errors.nameLimit = 'Name must be at least 8 characters';
 	}
+
 	if (email.length < 15) {
 		errors.emailLimit = 'Email must be at least 15 characters';
 	}
+
 	if (message.length < 50) {
 		errors.messageLimit = 'Message must be at least 50 characters';
 	}
+
 	if (isValidEmail(email)) {
 		errors.emailFormat =
 			'Supported domains as of today are: .com, .edu, .org, .io. Please use a valid email address.';
 	}
+
 	return errors;
 };
 
 const props = (data: FormData) => {
-	const access_key = 'ba3c1bc3-5ea1-4468-b24f-d712fecd17f7';
-	const subject = `${data.get('name')} sent a message from Personal Website Contact Form`;
-	const from_name = 'NEW MESSAGE';
+	const access_key = ACCESS_KEY;
+	const subject = `${data.get('name')}${SUBJECT}`;
+	const from_name = FROM_NAME;
 	const name = data.get('name') as string;
 	const email = data.get('email') as string;
 	const message = data.get('message') as string;
