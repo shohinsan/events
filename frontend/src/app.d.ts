@@ -51,6 +51,7 @@ interface ProjectItem {
 	tags?: string[];
 	href?: string;
 	host?: string;
+	state?: string;
 }
 
 interface EventItem {

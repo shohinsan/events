@@ -31,7 +31,7 @@
 		class="
     grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 	>
-		{#each projectConfig.stack as { name, description, href, icon, tags, host }}
+		{#each projectConfig.stack as { name, description, href, tags, host, state }}
 			<ul class="group hover:bg-zinc-800 rounded-xl px-5 py-5 mt-10 shadow-xl">
 				<a {href} class="group">
 					<div
@@ -62,10 +62,21 @@
 					</li>
 
 					<div
-						class="flex items-center mt-5 text-zinc-200 transition-colors group-hover:text-teal-400"
+						class="flex justify-between items-end flex items-center mt-5 text-zinc-200 transition-colors group-hover:text-teal-400"
 					>
-						<Link />
-						<span class="ml-5">{host}</span>
+						<div class="flex items-center">
+							<Link />
+							<span class="ml-2">{host}</span>
+						</div>
+						<div>
+							<span
+								class={state === 'In Progress'
+									? 'group-hover:text-yellow-400'
+									: state === 'Completed'
+										? 'group-hover:text-green-400'
+										: ''}>{state}</span
+							>
+						</div>
 					</div>
 				</a>
 			</ul>
