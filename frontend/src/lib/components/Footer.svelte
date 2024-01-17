@@ -1,24 +1,22 @@
 <script>
 	export let currentYear = new Date().getFullYear();
-    import { navConfig } from '$lib';
-    import { page } from '$app/stores';
-    
+	import { navConfig } from '$lib';
+	import { page } from '$app/stores';
 </script>
 
 <footer class="flex-none">
 	<div class="border-t pb-28 sm:pb-10 pt-10 border-zinc-700/40">
 		<div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
-			<div
-				class="flex flex-wrap justify-center gap-y-1 text-sm font-medium text-zinc-200"
-			>
+			<div class="flex flex-wrap justify-center gap-y-1 text-sm font-medium text-zinc-200">
 				{#each navConfig.desktopNavigation as { name, href }}
 					<li
 						aria-current={$page.url.pathname === href ? 'page' : undefined}
-						class="inline-block py-2 px-4"
+						class="inline-block py-2 px-2"
 					>
-						<a {href} class='hover:text-teal-400'
-							>{name}</a
-						>
+						<a {href} class="hover:text-teal-400">{name}</a>
+						{#if name !== 'Contact'}
+							<span class="ml-2">•</span>
+						{/if}
 					</li>
 				{/each}
 			</div>
