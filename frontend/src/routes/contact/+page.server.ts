@@ -54,14 +54,16 @@ const contactForm = (data: FormData): Data => ({
 const telegramBotMiddleware = async ({ name, email, phone, message }: Form) => {
 	const telegramBot = newTelegramBot(TELEGRAM_BOT_TOKEN);
 
-	const textBuilder = `
-	New Contact Form Submission
+	const textBuilder = `*New form submission from ${name}*
 	
-	Name: \n\t${name}\n
-	Email: \n\t${email}\n
-	Phone: \n\t${phone}\n
-	Message: \n\t${message}
-	`;
+	| *Contact details*
+	|-------------------------
+	   *Email*   -  ${email}      
+	   *Phone*  -  ${phone}              
+	
+	| *Message*
+	|-------------------------
+	   ${message}`;
 
-	await telegramBot.sendMessage(TELEGRAM_CHAT_ID, textBuilder);
+	await telegramBot.sendMessage(TELEGRAM_CHAT_ID, textBuilder, 'Markdown');
 };
