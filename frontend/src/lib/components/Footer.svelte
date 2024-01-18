@@ -1,6 +1,6 @@
 <script>
 	export let currentYear = new Date().getFullYear();
-	import { navConfig } from '$lib';
+	import { navigations } from '$seeds';
 	import { page } from '$app/stores';
 </script>
 
@@ -8,7 +8,7 @@
 	<div class="border-t pb-28 sm:pb-10 pt-10 border-zinc-700/40">
 		<div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
 			<div class="flex flex-wrap justify-center gap-y-1 text-sm font-medium text-zinc-200">
-				{#each navConfig.desktopNavigation as { name, href }}
+				{#each navigations.desktop as { href, name }}
 					<li
 						aria-current={$page.url.pathname === href ? 'page' : undefined}
 						class="inline-block py-2 px-2"

@@ -1,13 +1,6 @@
 <script>
 	import { Timeline } from '$components';
-	import { eventConfig } from '$lib';
-	import { utils } from '$lib';
-
-	eventConfig.events.sort((a, b) => {
-		const dateA = a.date ? new Date(a.date) : new Date(0);
-		const dateB = b.date ? new Date(b.date) : new Date(0);
-		return dateB.getTime() - dateA.getTime();
-	});
+	import { events } from '$seeds';
 </script>
 
 <svelte:head>
@@ -32,14 +25,12 @@
 			<Timeline />
 
 			<div class="space-y-10 py-10">
-				{#each eventConfig.events as { date, description }}
+				{#each events as { date, description }}
 					<header class="relative">
 						<div class="pointer-events-none top-0 flex h-4 items-center gap-x-2">
 							<div class="h-[0.0625rem] w-3.5 bg-gray-400" />
 							<div class="text-zinc-400 text-sm">
-								{#if date !== undefined}
-									{utils.formatDate(new Date(date).toISOString())}
-								{/if}
+								{date}
 							</div>
 						</div>
 						<div class="text-zinc-200 text-sm ml-5 mt-5">

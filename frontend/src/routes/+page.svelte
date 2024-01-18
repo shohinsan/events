@@ -1,8 +1,8 @@
 <script>
-	import { linkConfig } from '$lib';
 	import { page } from '$app/stores';
-	import { Download } from '$assets';
+	import { Download } from '$icons';
 	import { resume } from '$source';
+	import { link, site } from '$seeds';
 
 	export let data;
 
@@ -26,6 +26,13 @@
 		}
 	};
 </script>
+
+<svelte:head>
+	<title>{site.createSite.name}</title>
+	<meta name="twitter:title" content={site.createSite.name} />
+	<meta name="twitter:description" content={site.createSite.description} />
+	<meta name="Description" content={site.createSite.description} />
+</svelte:head>
 
 <div class="my-16 sm:mt-32 sm:mb-52">
 	<div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -78,7 +85,7 @@
 				<Download />
 			</button>
 
-			{#each linkConfig.professionalLinks as { name, href, icon }}
+			{#each link.professional as { name, href, icon }}
 				<ul
 					role="list"
 					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-teal-400"
@@ -99,7 +106,7 @@
 
 			<div class="mt-8 border-t pt-8 border-zinc-700/40" />
 
-			{#each linkConfig.personalLinks as { name, href, icon }}
+			{#each link.personal as { name, href, icon }}
 				<ul
 					role="list"
 					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-teal-400"

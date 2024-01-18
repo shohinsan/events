@@ -3,18 +3,19 @@ import preprocess from 'svelte-preprocess';
 
 const config = {
 	preprocess: preprocess({
-		postcss: true,
+		postcss: true
 	}),
 	kit: {
 		adapter: adapter(),
 		alias: {
 			$source: 'src/',
-			$components: 'src/lib/components',
 			$customTypes: 'src/app.d.ts',
-			$assets: 'src/lib/icons',
 			$styles: 'src/styles',
-		},
-	},
+			$components: 'src/lib/components',
+			$icons: 'src/lib/icons',
+			$seeds: 'src/lib/seeds'
+		}
+	}
 };
 
 export default config;

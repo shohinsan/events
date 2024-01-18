@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { navConfig } from '$lib';
+	import { navigations } from '$seeds';
 	import { page } from '$app/stores';
 </script>
 
@@ -16,7 +16,7 @@
 		class="sm:mr-5 ring-2 ring-zinc-600 ring-inset hidden sm:flex items-center flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-200 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur bg-zinc-800/90 text-zinc-200 ring-white/10"
 	>
 		<ul class="flex text-center items-center space-x-4">
-			{#each navConfig.desktopNavigation as { name, href }}
+			{#each navigations.desktop as { href, name }}
 				<li
 					aria-current={$page.url.pathname === href ? 'page' : undefined}
 					class="inline-block py-2 px-4"

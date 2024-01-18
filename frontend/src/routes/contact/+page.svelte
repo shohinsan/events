@@ -3,12 +3,11 @@
 	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
 	export let form: ActionData;
-	
+
 	function toast() {
 		status = true;
 		setTimeout(() => (status = false), 4000);
 	}
-	
 </script>
 
 <svelte:head>
@@ -49,13 +48,16 @@
 			<input type="hidden" name="access_key" />
 			<input type="hidden" name="subject" />
 			<input type="hidden" name="from_name" />
+			<div class="mt-6 flex flex-col">
+				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="name">
+					Name
+					<span class="text-red-500 ml-2">✶</span>
+				</label>
 
-			<div class="mt-6 flex">
 				<input
 					name="name"
 					autocomplete="name"
 					type="text"
-					placeholder="Name"
 					aria-label="Name"
 					class="min-w-0 flex-auto appearance-none rounded-md
 			border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
@@ -71,12 +73,35 @@
 				<p class="text-red-500 mt-3">{form.errors.nameLimit}</p>
 			{/if}
 
-			<div class="mt-6 flex">
+			<div class="mt-6 flex flex-col">
+				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="phone">
+					Phone
+					<span class="text-red-500 ml-2">(optional)</span>
+				</label>
+				<input
+					name="phone"
+					type="tel"
+					aria-label="Phone Number"
+					class="min-w-0 appearance-none rounded-md
+					border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
+					focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
+				/>
+			</div>
+
+			{#if form?.errors?.phoneFormat}
+				<p class="text-red-500 mt-3">{form.errors.phoneFormat}</p>
+			{/if}
+
+			<div class="mt-6 flex flex-col">
+				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="email">
+					Email
+					<span class="text-red-500 ml-2">✶</span>
+				</label>
+
 				<input
 					name="email"
 					autocomplete="email"
 					type="email"
-					placeholder="Email address"
 					aria-label="Email address"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
@@ -96,10 +121,14 @@
 				<p class="text-red-500 mt-3">{form.errors.emailFormat}</p>
 			{/if}
 
-			<div class="mt-6 flex">
+			<div class="mt-6 flex flex-col">
+				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="message">
+					Message
+					<span class="text-red-500 ml-2">✶</span>
+				</label>
+
 				<textarea
 					name="message"
-					placeholder="Message"
 					aria-label="Message"
 					rows="4"
 					class="min-w-0 flex-auto appearance-none rounded-md
@@ -116,6 +145,10 @@
 				<p class="text-red-500 mt-3">{form.errors.messageLimit}</p>
 			{/if}
 
+			{#if form?.errors?.requestTotal}
+				<p class="text-red-500 mt-3">{form.errors.requestTotal}</p>
+			{/if}
+
 			<div class="mt-6">
 				<button
 					type="submit"
@@ -125,9 +158,9 @@
 				</button>
 			</div>
 
-			<div class="mt-5 text-teal-400">
+			<div>
 				{#if status}
-					<p>Email has been sent</p>
+					<p class="mt-5 text-teal-400">Email has been sent</p>
 				{/if}
 			</div>
 		</form>

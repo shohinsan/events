@@ -1,6 +1,6 @@
 <script>
-	import { projectConfig } from '$lib';
-	import { Link } from '$assets';
+	import { project } from '$seeds';
+	import { Link } from '$icons';
 </script>
 
 <svelte:head>
@@ -31,7 +31,7 @@
 		class="
     grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 	>
-		{#each projectConfig.stack as { name, description, href, tags, host, state }}
+		{#each project as { name, description, href, tags, host, state }}
 			<ul class="group hover:bg-zinc-800 rounded-xl px-5 py-5 mt-10 shadow-xl">
 				<a {href} class="group">
 					<div
