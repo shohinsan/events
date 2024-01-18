@@ -55,11 +55,11 @@ const telegramBotMiddleware = async ({ name, email, phone, message }: Form) => {
 	const telegramBot = newTelegramBot(TELEGRAM_BOT_TOKEN);
 
 	const textBuilder = `
-	*New Contact Form Submission*
+	New Contact Form Submission
 	
-	Name: \n\t${name}
-	Email: \n\t${email}
-	Phone: \n\t${phone}
+	Name: \n\t${name}\n
+	Email: \n\t${email}\n
+	Phone: \n\t${phone}\n
 	Message: \n\t${message}
 	`;
 
