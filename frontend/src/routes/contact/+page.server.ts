@@ -43,7 +43,7 @@ export const actions = {
 
 const contactForm = (data: FormData): Data => ({
 	access_key: ACCESS_KEY,
-	subject: `${data.get('name')}${SUBJECT}`,
+	subject: `${data.get('name')} ${SUBJECT}`,
 	from_name: FROM_NAME,
 	name: data.get('name') as string,
 	email: data.get('email') as string,
@@ -55,15 +55,12 @@ const telegramBotMiddleware = async ({ name, email, phone, message }: Form) => {
 	const telegramBot = newTelegramBot(TELEGRAM_BOT_TOKEN);
 
 	const textBuilder = `
-	**New Contact Form Submission**
-
-	| Field       | Value        |
-	| :-----------| :------------|
-	| **Name**    | ${name}      |
-	| **Email**   | ${email}     |
-	| **Phone**   | ${phone}     |
-	| **Message** | ${message}   |
+	*New Contact Form Submission*
 	
+	Name: \n\t${name}
+	Email: \n\t${email}
+	Phone: \n\t${phone}
+	Message: \n\t${message}
 	`;
 
 	await telegramBot.sendMessage(TELEGRAM_CHAT_ID, textBuilder);
