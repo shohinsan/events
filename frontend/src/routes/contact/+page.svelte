@@ -76,10 +76,11 @@
 			<div class="mt-6 flex flex-col">
 				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="phone">
 					Phone
-					<span class="text-red-500 ml-2">(optional)</span>
+					<span class="text-red-500 ml-2">(optional) format as is : xxx-xxx-xxx-xxxx </span>
 				</label>
 				<input
 					name="phone"
+					placeholder="1-123-456-7890"
 					type="tel"
 					aria-label="Phone Number"
 					class="min-w-0 appearance-none rounded-md
