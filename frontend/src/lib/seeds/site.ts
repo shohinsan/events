@@ -13,6 +13,7 @@ class Site {
 		email: string;
 		instagram: URL;
 		steam: URL;
+		x: URL;
 	};
 	projects: {
 		meetminder: URL;
@@ -38,6 +39,7 @@ class Site {
 			email: string;
 			instagram: URL;
 			steam: URL;
+			x: URL;
 		},
 		projects: {
 			meetminder: URL;
@@ -72,7 +74,8 @@ const createSite = new Site(
 		telegram: new URL('https://t.me/yourtelegram'),
 		email: 'you@example.com',
 		instagram: new URL('https://www.instagram.com/yourinstagram'),
-		steam: new URL('https://steamcommunity.com/id/shohinsan')
+		steam: new URL('https://steamcommunity.com/id/shohinsan'),
+		x: new URL('https://twitter.com/ShohinAbd')
 	},
 	{
 		meetminder: new URL('https://github.com/shohinsan/MeetMinder'),

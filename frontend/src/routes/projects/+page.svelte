@@ -34,11 +34,11 @@
 		{#each project as { name, description, href, tags, host, state }}
 			<ul class="group hover:bg-zinc-800 rounded-xl px-5 py-5 mt-10 shadow-xl">
 				<a {href} class="group">
-					<div
+					<!-- <div
 						class="relative flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0"
 					>
-						<!-- <img src={icon} alt="Shohin's Pictures" class="h-8 w-8 rounded" /> -->
-					</div>
+						<img src={icon} alt="Shohin's Pictures" class="h-8 w-8 rounded" />
+					</div> -->
 
 					<h1 class="mt-5 text-zinc-100">
 						{name}
