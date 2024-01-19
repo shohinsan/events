@@ -62,13 +62,25 @@
 					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
 				<p>
-					Here are a few technologies I've been working with recently: SvelteKit, Java, and Python.
-					Now, I'm thinking about expanding my skill set even further by learning Golang and getting
-					further into understanding at api architecture protocols before practicing.
+					Here are a few technologies I've been working with recently:
+					<span class="text-zinc-200">SvelteKit, Java, and Python.</span>
+					Now, I'm thinking about expanding my skill set even further by
+					<span class="text-zinc-200">learning Golang</span>
+					and getting further into understanding at api architecture protocols before practicing. Other
+					than that, keeping technology news in sync by reading
+					<a class="text-blue-500 hover:text-teal-400" href="https://tldr.tech/"
+						>tldr.tech newsletters</a
+					>
 				</p>
 				<p>
-					To mention, my personal website was built with SvelteKit, TypeScript, TailwindCSS,
-					deployed to Cloudflare Pages, and enabled PWA for download and offline use.
+					To mention, my personal website was built with <span class="text-zinc-200"
+						>SvelteKit, TypeScript, TailwindCSS,</span
+					>
+					deployed to
+					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
+					<span class="text-zinc-200">email and telegram api'</span>
+					for contact form submission and enabled <span class="text-zinc-200">PWA</span> for download
+					and offline use.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or

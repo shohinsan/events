@@ -11,3 +11,4 @@ export {default as Download} from './Download.svelte';
 export {default as Hashtag} from './Hashtag.svelte';
 export {default as Link} from './Link.svelte';
 export {default as Logo} from './Logo.svelte';
+export {default as Steam} from './Steam.svelte';

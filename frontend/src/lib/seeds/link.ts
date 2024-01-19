@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn, Telegram, Email, Instagram } from '$icons';
+import { GitHub, LinkedIn, Telegram, Email, Instagram, Steam} from '$icons';
 import type { ComponentType } from 'svelte';
 import { site } from '$seeds';
 
@@ -33,8 +33,8 @@ const links1: Link[] = [
 
 const links2: Link[] = [
 	new Link('Telegram', site.createSite.links.telegram.href, Telegram),
-	new Link('Email', site.createSite.links.email, Email),
-	new Link('Instagram', site.createSite.links.instagram.href, Instagram)
+	new Link('Instagram', site.createSite.links.instagram.href, Instagram),
+	new Link('Steam', site.createSite.links.steam.href, Steam),
 ];
 
 const link = {
