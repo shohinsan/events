@@ -33,12 +33,11 @@
 	onMount(() => {
 		detectSWUpdate();
 	});
-	
 </script>
 
 <Metadata />
 
-<div class="flex bg-zinc-50 overflow-y-scroll">
+<div class="flex bg-zinc-50 overflow-y-scroll font-sfo">
 	<div class="fixed inset-0 flex bg-black justify-center sm:px-8 overflow-y-scroll">
 		<div class="flex w-full max-w-7xl lg:px-8">
 			<div class="w-full h-max ring-1 ring-zinc-100 bg-zinc-900 ring-zinc-300/20">
