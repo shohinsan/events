@@ -1,6 +1,6 @@
 type Bot = {
 	botToken: string;
-	sendMessage: (chatID: string, message: string) => Promise<Response>;
+	sendMessage: (chatID: string, message: string, parseMode?: string) => Promise<Response>;
 };
 
 type Response = {
@@ -12,11 +12,12 @@ type Response = {
 const newTelegramBot = (botToken: string): Bot => {
 	const baseUrl = `https://api.telegram.org/bot${botToken}`;
 
-	const sendMessage: Bot['sendMessage'] = async (chatID, message) => {
+	const sendMessage: Bot['sendMessage'] = async (chatID, message, parseMode) => {
 		const url = `${baseUrl}/sendMessage`;
 		const body = {
 			chat_id: chatID,
-			text: message
+			text: message,
+			parse_mode: parseMode
 		};
 
 		const res = await fetch(url, {
