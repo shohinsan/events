@@ -4,3 +4,6 @@ run:
 
 upgrade-modules:
 	npx npm-check-updates -u
+
+ghooks:
+    git config --global core.hooksPath .githooks
