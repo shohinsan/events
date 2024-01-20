@@ -5,5 +5,8 @@ run:
 upgrade-modules:
 	npx npm-check-updates -u
 
-ghooks:
-    git config --global core.hooksPath .githooks
+delete-branch:
+	git branch -D $(branch)
+	git push origin --delete $(branch)
+
+# make delete-branch branch=your-branch-name
