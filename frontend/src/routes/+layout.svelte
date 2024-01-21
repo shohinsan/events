@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { DesktopNav, MobileNav, Footer, Metadata } from '$components';
+	import Analytics from '$source/lib/components/Analytics.svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -36,6 +37,7 @@
 </script>
 
 <Metadata />
+<Analytics />
 
 <div class="flex bg-zinc-50 overflow-y-scroll font-sfo">
 	<div class="fixed inset-0 flex bg-black justify-center sm:px-8 overflow-y-scroll">

@@ -15,6 +15,12 @@ declare global {
 
 		// interface PageData {}
 		// interface Platform {}
+
+		declare interface Window {
+			'ga-disable-G-XMWD9Z9L3P': boolean;
+			fbq: (...args: unknown[]) => void;
+			gtag: (...args: unknown[]) => void;
+		}
 	}
 
 	declare interface Document {
