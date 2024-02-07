@@ -17,7 +17,7 @@
 <div class="min-h-screen flex items-center justify-center bg-zing-900">
 	<main class="max-w-2xl p-6 rounded-md text-center">
 		<button
-			class="ml-4 items-center hover:text-teal-400 rounded-full px-3 py-1 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur bg-zinc-800/90 text-zinc-200 ring-white/10"
+			class="ml-4 items-center hover:text-purple-400 rounded-full px-3 py-1 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur bg-zinc-800/90 text-zinc-200 ring-white/10"
 			on:click={() => history.back()}
 		>
 			Go Back

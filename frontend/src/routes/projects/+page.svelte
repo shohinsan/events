@@ -62,7 +62,7 @@
 					</li>
 
 					<div
-						class="flex justify-between items-end flex items-center mt-5 text-zinc-200 transition-colors group-hover:text-teal-400"
+						class="flex justify-between items-end flex items-center mt-5 text-zinc-200 transition-colors group-hover:text-purple-400"
 					>
 						<div class="flex items-center">
 							<Link />

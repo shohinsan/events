@@ -12,8 +12,8 @@
 				class={`inline-flex flex-col items-center justify-center group
                     ${
 											$page.url.pathname === href
-												? 'bg-zinc-800 group flex gap-x-3 p-2 text-sm leading-6 font-semibold text-teal-400'
-												: 'text-white hover:text-teal-400 hover:bg-zinc-700 group flex gap-x-3 p-2 text-sm leading-6 font-semibold'
+												? 'bg-zinc-800 group flex gap-x-3 p-2 text-sm leading-6 font-semibold text-purple-400'
+												: 'text-white hover:text-purle-400 hover:bg-zinc-700 group flex gap-x-3 p-2 text-sm leading-6 font-semibold'
 										}`}
 			>
 				{#if icon}
