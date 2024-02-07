@@ -45,9 +45,6 @@
 				Please fill out the form below and I'll get back to you as soon as possible.
 			</p>
 
-			<input type="hidden" name="access_key" />
-			<input type="hidden" name="subject" />
-			<input type="hidden" name="from_name" />
 			<div class="mt-6 flex flex-col">
 				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="name">
 					Name
@@ -69,18 +66,12 @@
 				<p class="text-red-500 mt-3">{form.errors.nameMissing}</p>
 			{/if}
 
-			{#if form?.errors?.nameLimit}
-				<p class="text-red-500 mt-3">{form.errors.nameLimit}</p>
-			{/if}
-
 			<div class="mt-6 flex flex-col">
 				<label class="text-sm font-semibold text-zinc-400 select-none mb-1" for="phone">
 					Phone
-					<span class="text-red-500 ml-2">(optional) format as is : xxx-xxx-xxx-xxxx </span>
 				</label>
 				<input
 					name="phone"
-					placeholder="1-123-456-7890"
 					type="tel"
 					aria-label="Phone Number"
 					class="min-w-0 appearance-none rounded-md
@@ -91,6 +82,10 @@
 
 			{#if form?.errors?.phoneFormat}
 				<p class="text-red-500 mt-3">{form.errors.phoneFormat}</p>
+			{/if}
+
+			{#if form?.errors?.phoneLimit}
+				<p class="text-red-500 mt-3">{form.errors.phoneLimit}</p>
 			{/if}
 
 			<div class="mt-6 flex flex-col">
@@ -112,10 +107,6 @@
 
 			{#if form?.errors?.emailMissing}
 				<p class="text-red-500 mt-3">{form.errors.emailMissing}</p>
-			{/if}
-
-			{#if form?.errors?.emailLimit}
-				<p class="text-red-500 mt-3">{form.errors.emailLimit}</p>
 			{/if}
 
 			{#if form?.errors?.emailFormat}
@@ -142,14 +133,6 @@
 				<p class="text-red-500 mt-3">{form.errors.messageMissing}</p>
 			{/if}
 
-			{#if form?.errors?.messageLimit}
-				<p class="text-red-500 mt-3">{form.errors.messageLimit}</p>
-			{/if}
-
-			{#if form?.errors?.requestTotal}
-				<p class="text-red-500 mt-3">{form.errors.requestTotal}</p>
-			{/if}
-
 			<div class="mt-6">
 				<button
 					type="submit"
@@ -160,7 +143,7 @@
 			</div>
 
 			<div>
-				{#if status}
+				{#if status && !form?.errors}
 					<p class="mt-5 text-teal-400">Email has been sent</p>
 				{/if}
 			</div>
