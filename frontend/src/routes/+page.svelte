@@ -62,13 +62,18 @@
 					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
 				<p>
+					Furthermore, I may sound funny, but my favorite color is
+					<span class="text-purple-400">purple</span>. The best part I found out, in designer's perspective, is
+					that it signifies inspiration, mystery, and creativity.
+				</p>
+				<p>
 					Here are a few technologies I've been working with recently:
 					<span class="text-zinc-200">SvelteKit, Java, and Python.</span>
 					Now, I'm thinking about expanding my skill set even further by
 					<span class="text-zinc-200">learning Golang</span>
 					and getting further into understanding at api architecture protocols before practicing. Other
 					than that, keeping technology news in sync by reading
-					<a class="text-blue-500 hover:text-teal-400" href="https://tldr.tech/"
+					<a class="text-blue-500 hover:text-purple-400" href="https://tldr.tech/"
 						>tldr.tech newsletters</a
 					>
 				</p>
@@ -78,9 +83,9 @@
 					>
 					deployed to
 					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
-					<span class="text-zinc-200">email and telegram api'</span>
-					for contact form submission and enabled <span class="text-zinc-200">PWA</span> for download
-					and offline use.
+					<span class="text-zinc-200">telegram bot api</span>
+					for contact form submission, enabled <span class="text-zinc-200">PWA</span> for download
+					and offline use, and improved Conversion Rate Optimization from a digital marketer's perspective.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or
@@ -100,7 +105,7 @@
 			{#each link.professional as { name, href, icon }}
 				<ul
 					role="list"
-					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-teal-400"
+					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-purple-400"
 				>
 					{#if icon}
 						<span class="flex-shrink-0">
@@ -121,7 +126,7 @@
 			{#each link.personal as { name, href, icon }}
 				<ul
 					role="list"
-					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-teal-400"
+					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-purple-400"
 				>
 					{#if icon}
 						<span class="flex-shrink-0">

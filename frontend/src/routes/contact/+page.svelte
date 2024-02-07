@@ -58,7 +58,7 @@
 					aria-label="Name"
 					class="min-w-0 flex-auto appearance-none rounded-md
 			border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
-			focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
+			focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-purple-400 focus:ring-purple-400/10 sm:text-sm"
 				/>
 			</div>
 
@@ -76,7 +76,7 @@
 					aria-label="Phone Number"
 					class="min-w-0 appearance-none rounded-md
 					border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
-					focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
+					focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-purple-400 focus:ring-purple-400/10 sm:text-sm"
 				/>
 			</div>
 
@@ -101,7 +101,7 @@
 					aria-label="Email address"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
-                        focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
+                        focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-purple-400 focus:ring-purple-400/10 sm:text-sm"
 				/>
 			</div>
 
@@ -125,7 +125,7 @@
 					rows="4"
 					class="min-w-0 flex-auto appearance-none rounded-md
                         border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5
-                        focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-teal-400 focus:ring-teal-400/10 sm:text-sm"
+                        focus:outline-none focus:ring-4 border-zinc-700 bg-zinc-700/[0.15] text-zinc-200 placeholder:text-zinc-500 focus:border-purple-400 focus:ring-purple-400/10 sm:text-sm"
 				/>
 			</div>
 
@@ -136,7 +136,7 @@
 			<div class="mt-6">
 				<button
 					type="submit"
-					class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-md w-1/2 text-center"
+					class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md w-1/2 text-center"
 				>
 					Send
 				</button>
@@ -144,7 +144,7 @@
 
 			<div>
 				{#if status && !form?.errors}
-					<p class="mt-5 text-teal-400">Email has been sent</p>
+					<p class="mt-5 text-purple-400">Email has been sent</p>
 				{/if}
 			</div>
 		</form>

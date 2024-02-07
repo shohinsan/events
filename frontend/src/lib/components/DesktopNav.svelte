@@ -8,7 +8,7 @@
 		<a href="/" class="flex items-center">
 			<span
 				class="ml-10 sm:ml-16 text-3xl font-bold text-zinc-200
-			font-graffiti hover:text-teal-400 w-[130px]">Shohin A .</span
+			font-graffiti hover:text-purple-400 w-[130px]">Shohin A .</span
 			>
 		</a>
 	</div>
@@ -21,7 +21,7 @@
 					aria-current={$page.url.pathname === href ? 'page' : undefined}
 					class="inline-block py-2 px-4"
 				>
-					<a {href} class={$page.url.pathname === href ? 'text-teal-400' : 'hover:text-teal-400'}
+					<a {href} class={$page.url.pathname === href ? 'text-purple-400' : 'hover:text-purple-400'}
 						>{name}</a
 					>
 				</li>

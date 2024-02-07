@@ -13,7 +13,7 @@
 						aria-current={$page.url.pathname === href ? 'page' : undefined}
 						class="inline-block py-2 px-2"
 					>
-						<a {href} class="hover:text-teal-400">{name}</a>
+						<a {href} class="hover:text-purple-400">{name}</a>
 						{#if name !== 'Contact'}
 							<span class="ml-2">•</span>
 						{/if}
