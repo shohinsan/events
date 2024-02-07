@@ -28,16 +28,12 @@ declare global {
 	}
 }
 
-type Custom = {
-	access_key: string;
-	subject: string;
-	from_name: string;
-};
 
-type Data = Custom & {
+
+type Data = {
 	name: string;
 	email: string;
-	phone?: string | undefined;
+	phone?: number | undefined;
 	message: string;
 };
 
@@ -47,12 +43,9 @@ interface Validation {
 	nameMissing?: string;
 	emailMissing?: string;
 	messageMissing?: string;
-	nameLimit?: string;
-	emailLimit?: string;
-	messageLimit?: string;
-	requestTotal?: string;
 	emailFormat?: string;
 	phoneFormat?: string;
+	phoneLimit?: string;
 }
 
 export { Data, Validation, Form, Window, Document };
