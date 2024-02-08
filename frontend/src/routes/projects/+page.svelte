@@ -1,6 +1,22 @@
-<script>
+<script lang="ts">
 	import { project } from '$seeds';
 	import { Link } from '$icons';
+
+	const tabs = [
+		{ label: 'All', category: null, selected: true },
+		{ label: 'Web', category: 'Web', selected: false },
+		{ label: 'Mobile', category: 'Mobile', selected: false },
+		{ label: 'Figma', category: 'Figma', selected: false }
+	];
+
+	let activeTab = tabs[0].label;
+	let categorized = project;
+
+	const handleTabClick = (label: string) => {
+		activeTab = label;
+		categorized =
+			label === tabs[0].label ? project : project.filter((proj) => proj.category === label);
+	};
 </script>
 
 <svelte:head>
@@ -27,11 +43,24 @@
 		</div>
 	</div>
 
+	<div class="flex pt-5 ">
+		{#each tabs as tab (tab.label)}
+			<button
+				on:click={() => handleTabClick(tab.label)}
+				class="border-purple-400 text-purple-400 bg-zinc-800 {activeTab === tab.label
+					? 'active w-1/4 border-purple-400 text-purple-400 border-b-2 py-4 px-1 text-center text-sm font-medium'
+					: 'w-1/4 border-transparent text-zinc-200 border-transparent hover:border-purple-300 hover:text-purple-300 hover:border-b-2  py-4 px-1 text-center text-sm font-medium'}"
+			>
+				{tab.label}
+			</button>
+		{/each}
+	</div>
+
 	<div
 		class="
-    grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    grid grid-cols-1 gap-x-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
 	>
-		{#each project as { name, description, href, tags, host, state }}
+		{#each categorized as { name, description, href, tags, host, state }}
 			<ul class="group hover:bg-zinc-800 rounded-xl px-5 py-5 mt-10 shadow-xl">
 				<a {href} class="group">
 					<!-- <div

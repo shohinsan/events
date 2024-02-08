@@ -7,6 +7,7 @@ class Project {
 	href: string;
 	host: string;
 	state: string;
+	category: string;
 
 	constructor({
 		name,
@@ -14,7 +15,8 @@ class Project {
 		tags,
 		href,
 		host,
-		state
+		state,
+		category
 	}: {
 		name: string;
 		description: string;
@@ -22,6 +24,7 @@ class Project {
 		href: string;
 		host: string;
 		state: string;
+		category: string;
 	}) {
 		this.name = name;
 		this.description = description;
@@ -29,6 +32,7 @@ class Project {
 		this.href = href;
 		this.host = host;
 		this.state = state;
+		this.category = category;
 	}
 }
 const createProjects: Project[] = [
@@ -38,7 +42,8 @@ const createProjects: Project[] = [
 		tags: ['reactjs', 'fastapi', 'postgresql', 'github actions', 'raspberry pi'],
 		href: site.createSite.projects.mortesense.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'Starbucks Enterprise',
@@ -46,7 +51,8 @@ const createProjects: Project[] = [
 		tags: ['gcp', 'gke', 'spring-boot', 'cloud sql', 'java', 'docker'],
 		href: site.createSite.projects.starbucks.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'MeetMinder',
@@ -54,7 +60,8 @@ const createProjects: Project[] = [
 		tags: ['typescript', 'sveltekit', 'postgresql', 'tailwindcss', 'golang'],
 		href: site.createSite.projects.meetminder.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'In Progress'
+		state: 'In Progress',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'RootsRise',
@@ -62,7 +69,8 @@ const createProjects: Project[] = [
 		tags: ['sveltekit', 'css', 'typescript'],
 		href: site.createSite.projects.rootsrise.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'In Progress'
+		state: 'In Progress',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'iFarmo',
@@ -70,7 +78,8 @@ const createProjects: Project[] = [
 		tags: ['sveltekit', 'scss', 'bun', 'hono', 'mysql'],
 		href: site.createSite.projects.ifarmo.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'BookUp',
@@ -78,7 +87,8 @@ const createProjects: Project[] = [
 		tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
 		href: site.createSite.projects.bookup.href,
 		host: 'github.com',
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'ScholarRabbit',
@@ -86,7 +96,8 @@ const createProjects: Project[] = [
 		tags: ['flask', 'sqlite', 'bootstrap'],
 		href: site.createSite.projects.scholarrabbit.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Web'
 	}),
 	new Project({
 		name: 'Postwitter',
@@ -94,7 +105,8 @@ const createProjects: Project[] = [
 		tags: ['swift', 'firebase', 'cocoapods', 'xcode'],
 		href: site.createSite.projects.twitter.href,
 		host: site.createSite.projects.mortesense.host,
-		state: 'Completed'
+		state: 'Completed',
+		category: 'Mobile'
 	})
 ];
 
