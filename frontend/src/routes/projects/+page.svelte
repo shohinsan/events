@@ -49,7 +49,7 @@
 				on:click={() => handleTabClick(tab.label)}
 				class="border-purple-400 text-purple-400 bg-zinc-800 {activeTab === tab.label
 					? 'active w-1/4 border-purple-400 text-purple-400 border-b-2 py-4 px-1 text-center text-sm font-medium'
-					: 'w-1/4 border-transparent text-zinc-200 border-transparent hover:border-purple-300 hover:text-purple-300 hover:border-b-2  py-4 px-1 text-center text-sm font-medium'}"
+					: 'w-1/4 border-transparent text-zinc-200 border-transparent border-zinc-200 border-b-2 hover:border-purple-300 hover:text-purple-300 hover:border-b-2  py-4 px-1 text-center text-sm font-medium'}"
 			>
 				{tab.label}
 			</button>
