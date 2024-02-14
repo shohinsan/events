@@ -62,18 +62,18 @@ class Site {
 		this.keywords = keywords;
 	}
 }
-
+https://www.instagram.com/shohin.abd
 const createSite = new Site(
 	'Shohin Abdulkhamidov - Personal Portfolio Website',
 	new URL(dev ? 'http://localhost:5173' : 'https://shohin.pages.dev'),
 	me,
 	'This is a personal website for Shohin Abdulkhamidov to showcase his projects, work experience, and contact information.',
 	{
-		github: new URL('https://github.com/yourgithub'),
-		linkedin: new URL('https://www.linkedin.com/in/yourlinkedin'),
-		telegram: new URL('https://t.me/yourtelegram'),
-		email: 'you@example.com',
-		instagram: new URL('https://www.instagram.com/yourinstagram'),
+		github: new URL('https://github.com/shohinsan'),
+		linkedin: new URL('https://www.linkedin.com/in/shohin-abdulkhamidov'),
+		telegram: new URL('https://t.me/shohinsan'),
+		email: 'abd.shohin@gmail.com',
+		instagram: new URL('https://www.instagram.com/shohin.abd'),
 		steam: new URL('https://steamcommunity.com/id/shohinsan'),
 		x: new URL('https://twitter.com/ShohinAbd')
 	},
