@@ -8,19 +8,14 @@
 
 	const download = async () => {
 		try {
-			const response = await fetch(resume);
-			const blob = await response.blob();
-
-			const a = document.createElement('a');
-			document.body.appendChild(a);
-			const url = window.URL.createObjectURL(blob);
-			a.href = url;
-			a.download = 'Shohin_Abdulkhamidov_Resume.pdf';
+			const blob = await (await fetch(resume)).blob();
+			const url = URL.createObjectURL(blob);
+			const a = Object.assign(document.createElement('a'), {
+				href: url,
+				download: 'Shohin_Abdulkhamidov_Resume.pdf'
+			});
 			a.click();
-			setTimeout(() => {
-				window.URL.revokeObjectURL(url);
-				document.body.removeChild(a);
-			}, 0);
+			setTimeout(() => URL.revokeObjectURL(url), 0);
 		} catch (error) {
 			console.error('Error fetching PDF or initiating download:', error);
 		}
@@ -63,8 +58,8 @@
 				</p>
 				<p>
 					Furthermore, I may sound funny, but my favorite color is
-					<span class="text-purple-400">purple</span>. The best part I found out, in designer's perspective, is
-					that it signifies inspiration, mystery, and creativity.
+					<span class="text-purple-400">purple</span>. The best part I found out, in designer's
+					perspective, is that it signifies inspiration, mystery, and creativity.
 				</p>
 				<p>
 					Here are a few technologies I've been working with recently:
@@ -85,7 +80,8 @@
 					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
 					<span class="text-zinc-200">telegram bot api</span>
 					for contact form submission, enabled <span class="text-zinc-200">PWA</span> for download
-					and offline use, and is optimized for <span class="text-zinc-200">Conversion Rate Optimization</span> from a digital marketer's perspective.
+					and offline use, and is optimized for
+					<span class="text-zinc-200">Conversion Rate Optimization</span> from a digital marketer's perspective.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or

@@ -11,7 +11,7 @@ export default defineConfig(({ mode }: { mode: string }) => {
 		},
 		server: {
 			warmup: {
-				clientFiles: ['./src/lib/site.ts'],
+				clientFiles: ['./src/lib/seeds/site.ts'],
 			},
 		},
 	};
