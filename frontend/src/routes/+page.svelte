@@ -63,8 +63,8 @@
 				</p>
 				<p>
 					Furthermore, I may sound funny, but my favorite color is
-					<span class="text-purple-400">purple</span>. The best part I found out, in designer's perspective, is
-					that it signifies inspiration, mystery, and creativity.
+					<span class="text-purple-400">purple</span> because in reality, 
+					it signifies inspiration, mystery, and creativity.
 				</p>
 				<p>
 					Here are a few technologies I've been working with recently:
@@ -83,9 +83,9 @@
 					>
 					deployed to
 					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
-					<span class="text-zinc-200">telegram bot api</span>
+					<span class="text-zinc-200">Telegram Bot API</span>
 					for contact form submission, enabled <span class="text-zinc-200">PWA</span> for download
-					and offline use, and is optimized for <span class="text-zinc-200">Conversion Rate Optimization</span> from a digital marketer's perspective.
+					and offline use, and improved <span class="text-zinc-200">Conversion Rate Optimization</span>.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or
