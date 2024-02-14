@@ -8,19 +8,14 @@
 
 	const download = async () => {
 		try {
-			const response = await fetch(resume);
-			const blob = await response.blob();
-
-			const a = document.createElement('a');
-			document.body.appendChild(a);
-			const url = window.URL.createObjectURL(blob);
-			a.href = url;
-			a.download = 'Shohin_Abdulkhamidov_Resume.pdf';
+			const blob = await (await fetch(resume)).blob();
+			const url = URL.createObjectURL(blob);
+			const a = Object.assign(document.createElement('a'), {
+				href: url,
+				download: 'Shohin_Abdulkhamidov_Resume.pdf'
+			});
 			a.click();
-			setTimeout(() => {
-				window.URL.revokeObjectURL(url);
-				document.body.removeChild(a);
-			}, 0);
+			setTimeout(() => URL.revokeObjectURL(url), 0);
 		} catch (error) {
 			console.error('Error fetching PDF or initiating download:', error);
 		}
