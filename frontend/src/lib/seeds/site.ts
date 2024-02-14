@@ -94,6 +94,4 @@ const site = {
 	createSite
 };
 
-console.log();
-
 export default site;
