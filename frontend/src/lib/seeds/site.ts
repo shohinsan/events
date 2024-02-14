@@ -62,7 +62,7 @@ class Site {
 		this.keywords = keywords;
 	}
 }
-https://www.instagram.com/shohin.abd
+
 const createSite = new Site(
 	'Shohin Abdulkhamidov - Personal Portfolio Website',
 	new URL(dev ? 'http://localhost:5173' : 'https://shohin.pages.dev'),
