@@ -35,7 +35,7 @@
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
 					src={data.myimage}
-					alt="Shohin's Pictures"
+					alt="Shohin's Picture"
 					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
 				/>
 			</div>
@@ -56,11 +56,7 @@
 					mine, and I'm always looking for ways to add more excitement to my gaming experience or
 					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
-				<p>
-					Furthermore, I may sound funny, but my favorite color is
-					<span class="text-purple-400">purple</span> because in reality, 
-					it signifies inspiration, mystery, and creativity.
-				</p>
+				
 				<p>
 					Here are a few technologies I've been working with recently:
 					<span class="text-zinc-200">SvelteKit, Java, and Python.</span>
