@@ -56,7 +56,7 @@ const telegramBotMiddleware = async (
 	   *Phone*  -  ${phone} 
 	   *Country*  -  ${country}
 	
-        | *Message*
+  | *Message*
 	|-------------------------
 	   ${message}`;
 
