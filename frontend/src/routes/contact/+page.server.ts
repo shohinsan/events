@@ -48,8 +48,7 @@ const telegramBotMiddleware = async (
 ) => {
 	const telegramBot = newTelegramBot(TELEGRAM_BOT_TOKEN);
 
-	const nameText = name ? `от ${name}` : '';
-    const textBuilder = `*New form submission from ${nameText}*
+    	const textBuilder = `*New form submission from ${name}*
 	
 	| *Contact details*
 	|-------------------------
@@ -57,7 +56,7 @@ const telegramBotMiddleware = async (
 	   *Phone*  -  ${phone} 
 	   *Country*  -  ${country}
 	
-    | *Message*
+        | *Message*
 	|-------------------------
 	   ${message}`;
 
