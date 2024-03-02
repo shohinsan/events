@@ -9,4 +9,8 @@ delete-branch:
 	git branch -D $(branch)
 	git push origin --delete $(branch)
 
+reinstall-modules:
+	rm -rf node_modules && npm install
+
+
 # make delete-branch branch=your-branch-name
