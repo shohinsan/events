@@ -35,7 +35,7 @@
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
 					src={data.myimage}
-					alt="Shohin's Picture"
+					alt="Shohin"
 					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
 				/>
 			</div>
@@ -56,7 +56,7 @@
 					mine, and I'm always looking for ways to add more excitement to my gaming experience or
 					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
-				
+
 				<p>
 					Here are a few technologies I've been working with recently:
 					<span class="text-zinc-200">SvelteKit, Java, and Python.</span>
@@ -76,7 +76,8 @@
 					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
 					<span class="text-zinc-200">Telegram Bot API</span>
 					for contact form submission, enabled <span class="text-zinc-200">PWA</span> for download
-					and offline use, and improved <span class="text-zinc-200">Conversion Rate Optimization</span>.
+					and offline use, and improved
+					<span class="text-zinc-200">Conversion Rate Optimization</span>.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or

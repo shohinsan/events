@@ -9,7 +9,7 @@ type Response = {
 	status: number;
 };
 
-const newTelegramBot = (botToken: string): Bot => {
+const newTelegramBotForm = (botToken: string): Bot => {
 	const baseUrl = `https://api.telegram.org/bot${botToken}`;
 
 	const sendMessage: Bot['sendMessage'] = async (chatID, message, parseMode) => {
@@ -43,4 +43,4 @@ const newTelegramBot = (botToken: string): Bot => {
 	};
 };
 
-export default newTelegramBot;
+export default newTelegramBotForm;

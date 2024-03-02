@@ -3,6 +3,6 @@ import { R2_PORTRAIT } from '$env/static/private';
 
 export const load: PageServerLoad = () => {
 	return {
-		myimage: R2_PORTRAIT,
+		myimage: R2_PORTRAIT
 	};
 };
