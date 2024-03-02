@@ -18,7 +18,7 @@ const newTelegramBotApp = async () => {
 	const telegramBot = app(APP_TELEGRAM_BOT_TOKEN);
 	await telegramBot.setChatMenuButton?.(TELEGRAM_CHAT_ID, {
 		type: 'web_app',
-		text: '📱 Test',
+		text: 'Open',
 		web_app: {
 			url: site.createSite.url.href
 		}
