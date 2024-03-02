@@ -23,9 +23,9 @@ const newTelegramBotApp = async () => {
 			url: site.createSite.url.href
 		}
 	});
-	await telegramBot.setMyName?.('setMyName', 'en');
-	await telegramBot.setMyDescription?.('setMyDescription', 'en');
-	await telegramBot.setMyShortDescription?.('setMyShortDescription', 'en');
+	await telegramBot.setMyName?.('InsidiousBot', 'en');
+	await telegramBot.setMyDescription?.('Shohin Mini App. Powered by SvelteKit and Cloudflare', 'en');
+	await telegramBot.setMyShortDescription?.('Shohin Mini App. Powered by SvelteKit and Cloudflare', 'en');
 	await telegramBot.setMyImage?.(site.createSite.ogImage);
 
 	await telegramBot.setMyCommands?.(
