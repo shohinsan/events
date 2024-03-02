@@ -1,9 +1,6 @@
 import { fail } from '@sveltejs/kit';
-import { newTelegramBot, typed } from '$lib';
-import {
-	TELEGRAM_BOT_TOKEN,
-	TELEGRAM_CHAT_ID
-} from '$env/static/private';
+import { newTelegramBotForm, typed } from '$lib';
+import { FORM_TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$env/static/private';
 import type { Data } from '$customTypes';
 import type { ActionData } from '../$types';
 
@@ -31,7 +28,6 @@ export const actions = {
 			},
 			country
 		);
-
 	}
 } satisfies ActionData;
 
@@ -39,16 +35,16 @@ const contactForm = (data: FormData): Data => ({
 	name: data.get('name') as string,
 	email: data.get('email') as string,
 	message: data.get('message') as string,
-	phone: data.get('phone') ? Number(data.get('phone')) : undefined,
+	phone: data.get('phone') ? Number(data.get('phone')) : undefined
 });
 
 const telegramBotMiddleware = async (
 	{ name, email, phone, message }: Data,
 	country: string | undefined
 ) => {
-	const telegramBot = newTelegramBot(TELEGRAM_BOT_TOKEN);
+	const telegramBot = newTelegramBotForm(FORM_TELEGRAM_BOT_TOKEN);
 
-    	const textBuilder = `*New form submission from ${name}*
+	const textBuilder = `*New form submission from ${name}*
 	
 	| *Contact details*
 	|-------------------------
