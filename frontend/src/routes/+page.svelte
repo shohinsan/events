@@ -35,7 +35,7 @@
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
 					src={data.myimage}
-					alt="Shohin's Picture"
+					alt="Shohin Abdulkhamidov"
 					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
 				/>
 			</div>
