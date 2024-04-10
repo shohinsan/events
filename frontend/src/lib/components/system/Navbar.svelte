@@ -23,7 +23,7 @@
 			'flex  hidden items-center rounded-full bg-zinc-800/90 px-3 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-2 ring-inset ring-white/10 ring-zinc-600 ring-zinc-900/5 backdrop-blur sm:mr-5 sm:flex'
 		)}
 	>
-		<ul class="flex grid grid-cols-3 items-center space-x-4 text-center md:grid-cols-5">
+		<ul class="flex grid grid-cols-3 items-center space-x-4 text-center md:grid-cols-4">
 			{#each navigations.desktop as { href, name }}
 				<li
 					aria-current={$page.url.pathname === href ? 'page' : undefined}
@@ -40,10 +40,10 @@
 </header>
 
 <!-- Mobile -->
-<div
+<!-- <div
 	class="fixed bottom-0 left-0 z-50 h-16 w-full border-t border-secondary bg-secondary sm:hidden"
 >
-	<div class="mx-auto grid h-full max-w-lg grid-cols-5">
+	<div class="mx-auto grid h-full max-w-lg grid-cols-4">
 		{#each navigations.mobile as { href, name, icon }}
 			<a
 				on:click={scrollToTop}
@@ -73,4 +73,4 @@
 			</div>
 		{/each}
 	</div>
-</div>
+</div> -->

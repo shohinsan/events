@@ -1,5 +1,4 @@
 import { dev } from '$app/environment';
-import { me } from '../personal';
 
 class Site {
 	name: string;
@@ -66,7 +65,7 @@ class Site {
 const createSite = new Site(
 	'Shohin Abdulkhamidov - Personal Portfolio Website',
 	new URL(dev ? 'http://localhost:5173' : 'https://shohin.pages.dev'),
-	me,
+	'https://shohin.pages.dev/portrait.png',
 	'This is a personal website for Shohin Abdulkhamidov to showcase his projects, work experience, and contact information.',
 	{
 		github: new URL('https://github.com/shohinsan'),

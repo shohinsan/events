@@ -2,13 +2,25 @@
 	import '$styles/tailwind.pcss';
 	import '$styles/font.css';
 	import '$styles/app.css';
-	
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { Navbar, Footer, Metadata } from '$components/system';
 	import { Toaster } from '$components/ui/sonner';
 	import { ModeWatcher, setMode } from 'mode-watcher';
-	import { cn } from '$source/lib/utils'; // Importing cn function
+	import { cn } from '$source/lib/utils';
+	import NProgress from 'nprogress';
+	import 'nprogress/nprogress.css';
+
+	NProgress.configure({ showSpinner: false });
+
+	afterNavigate(() => {
+		NProgress.done();
+	});
+
+	beforeNavigate(() => {
+		NProgress.start();
+	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -20,25 +32,8 @@
 		});
 	});
 
-	async function detectSWUpdate() {
-		const registration = await navigator.serviceWorker.ready;
-
-		registration.addEventListener('updatefound', () => {
-			const newSW = registration.installing;
-			newSW?.addEventListener('statechange', () => {
-				if (newSW.state === 'installed') {
-					if (confirm('New version available! Refresh to update?')) {
-						newSW.postMessage({ type: 'SKIP_WAITING' });
-						window.location.reload();
-					}
-				}
-			});
-		});
-	}
-
 	onMount(() => {
 		setMode('dark');
-		detectSWUpdate();
 	});
 </script>
 

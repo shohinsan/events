@@ -1,11 +1,9 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { Download } from '$icons';
 	import { link, site } from '$seeds';
 	import { cn } from '$source/lib/utils'; // Importing cn function
 	import { Button } from '$shadcn/button';
-
-	export let data;
 </script>
 
 <svelte:head>
@@ -20,7 +18,7 @@
 		<div class="lg:pl-20">
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
-					src={data.myimage}
+					src="https://pub-c1d83372ed0146a9ae11bca340543efb.r2.dev/me.png"
 					alt="Shohin Abdulkhamidov"
 					class="aspect-square rotate-3 rounded-2xl bg-zinc-800 object-cover"
 				/>
@@ -62,9 +60,8 @@
 					<span>Cloudflare Pages,</span> integrated with
 					<span>Telegram Bot API</span>
 					for contact form submission,
-					<span>GitHub CMS</span> supported by <span>tailwind's typography plugin</span> for article posts,
-					enabled <span class="">PWA</span> for download and offline
-					use, and improved
+					<span>GitHub CMS</span> supported by <span>tailwind's typography plugin</span> for article
+					posts, enabled <span class="">PWA</span> for download and offline use, and improved
 					<span>Conversion Rate Optimization</span>.
 				</p>
 				<p>

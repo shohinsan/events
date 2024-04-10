@@ -2,7 +2,7 @@
 	import { Timeline } from '$components/system';
 	import { events } from '$seeds';
 	import * as Collapsible from '$lib/components/ui/collapsible';
-	import { cn } from '$source/lib/utils'; // Importing cn function
+	import { cn } from '$source/lib/utils';
 </script>
 
 <svelte:head>

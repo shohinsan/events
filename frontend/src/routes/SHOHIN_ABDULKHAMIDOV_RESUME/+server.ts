@@ -16,7 +16,7 @@ export async function GET() {
 	// pdf.registerFontkit(fontkit);
 	// const font_data = await read(sanfrancisco).arrayBuffer();
 	// const font = await pdf.embedFont(font_data);
-	
+
 	// Get the first page if it exists
 	let page = pdf.getPage(0);
 	if (!page) {

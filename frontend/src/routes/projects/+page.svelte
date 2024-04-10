@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { project } from '$seeds';
 	import { Link } from '$icons';
-	import { cn } from '$source/lib/utils'; // Importing cn function
+	import { cn } from '$source/lib/utils';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { Badge } from '$lib/components/ui/badge';
-	import * as Pagination from '$shadcn/pagination';
-	import * as Card from '$shadcn/card';
 
 	let activeTab: string = 'All';
 	let categorized: any[] = project;
