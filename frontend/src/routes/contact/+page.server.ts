@@ -1,42 +1,43 @@
+import type { PageServerLoad, Actions } from './$types.js';
 import { fail } from '@sveltejs/kit';
-import { newTelegramBotForm, typed } from '$lib';
+import { superValidate } from 'sveltekit-superforms';
+import { zod } from 'sveltekit-superforms/adapters';
+import v from '$lib/validation-schema';
 import { FORM_TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$env/static/private';
 import type { Data } from '$customTypes';
-import type { ActionData } from '../$types';
+import { newTelegramBotForm } from '$source/lib/telegram/index.js';
 
-export const actions = {
-	default: async ({ request }: { request: Request }) => {
-		const data: FormData = await request.formData();
-		const { name, email, message, phone } = contactForm(data);
+export const load: PageServerLoad = async () => {
+	return {
+		form: await superValidate(zod(v.contactSchema))
+	};
+};
 
-		const country = request.headers.get('cf-ipcountry') as string | undefined;
-		const validate = typed({ name, email, message, phone });
-
-		if (Object.keys(validate).length > 0) {
-			return fail(400, {
-				required: !name || !email || !message || !phone,
-				errors: validate
-			});
-		}
+export const actions: Actions = {
+	default: async (event) => {
+		const form = await superValidate(event, zod(v.contactSchema));
+		const country = event.request.headers.get('cf-ipcountry') as string | undefined;
 
 		await telegramBotMiddleware(
 			{
-				name,
-				email,
-				phone,
-				message
+				name: form.data.name,
+				email: form.data.email,
+				phone: form.data.phone,
+				message: form.data.message
 			},
 			country
 		);
-	}
-} satisfies ActionData;
 
-const contactForm = (data: FormData): Data => ({
-	name: data.get('name') as string,
-	email: data.get('email') as string,
-	message: data.get('message') as string,
-	phone: data.get('phone') ? Number(data.get('phone')) : undefined
-});
+		if (!form.valid) {
+			return fail(400, {
+				form
+			});
+		}
+		return {
+			form
+		};
+	}
+};
 
 const telegramBotMiddleware = async (
 	{ name, email, phone, message }: Data,
@@ -45,13 +46,13 @@ const telegramBotMiddleware = async (
 	const telegramBot = newTelegramBotForm(FORM_TELEGRAM_BOT_TOKEN);
 
 	const textBuilder = `*New form submission from ${name}*
-	
+
 	| *Contact details*
 	|-------------------------
-	   *Email*   -  ${email}      
-	   *Phone*  -  ${phone} 
+	   *Email*   -  ${email}
+	   *Phone*  -  ${phone}
 	   *Country*  -  ${country}
-	
+
   | *Message*
 	|-------------------------
 	   ${message}`;

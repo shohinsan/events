@@ -1,126 +1,68 @@
+import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
-export default {
+import typography from '@tailwindcss/typography';
+
+const config: Config = {
+	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+	safelist: ['dark'],
 	theme: {
-		screens: {
-			sm: '640px',
-			md: '768px',
-			lg: '1024px',
-			xl: '1280px',
-			'2xl': '1536px'
-		},
-		fontSize: {
-			xs: '0.75rem',
-			sm: '0.875rem',
-			base: '1rem',
-			lg: '1.125rem',
-			xl: '1.25rem',
-			'2xl': '1.5rem',
-			'3xl': '1.875rem',
-			'4xl': '2.25rem',
-			'5xl': '3rem',
-			'6xl': '4rem'
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				'2xl': '1400px'
+			}
 		},
 		extend: {
 			colors: {
+				border: 'hsl(var(--border) / <alpha-value>)',
+				input: 'hsl(var(--input) / <alpha-value>)',
+				ring: 'hsl(var(--ring) / <alpha-value>)',
+				background: 'hsl(var(--background) / <alpha-value>)',
+				foreground: 'hsl(var(--foreground) / <alpha-value>)',
 				primary: {
-					50: 'rgba(229, 248, 224, 1)',
-					100: 'rgba(220, 246, 214, 1)',
-					200: 'rgba(212, 244, 204, 1)',
-					300: 'rgba(185, 237, 173, 1)',
-					400: 'rgba(133, 224, 111, 1)',
-					500: 'rgba(81, 210, 49, 1)',
-					600: 'rgba(73, 189, 44, 1)',
-					700: 'rgba(61, 158, 37, 1)',
-					800: 'rgba(49, 126, 29, 1)',
-					900: 'rgba(40, 103, 24, 1)'
+					DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+					foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
 				},
 				secondary: {
-					50: 'rgba(244, 224, 247, 1)',
-					100: 'rgba(240, 213, 244, 1)',
-					200: 'rgba(236, 203, 241, 1)',
-					300: 'rgba(225, 171, 233, 1)',
-					400: 'rgba(203, 108, 216, 1)',
-					500: 'rgba(180, 45, 199, 1)',
-					600: 'rgba(162, 41, 179, 1)',
-					700: 'rgba(135, 34, 149, 1)',
-					800: 'rgba(108, 27, 119, 1)',
-					900: 'rgba(88, 22, 98, 1)'
+					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
+					foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)'
 				},
-				tertiary: {
-					50: 'rgba(237, 218, 252, 1)',
-					100: 'rgba(231, 205, 250, 1)',
-					200: 'rgba(225, 193, 249, 1)',
-					300: 'rgba(206, 155, 246, 1)',
-					400: 'rgba(170, 80, 239, 1)',
-					500: 'rgba(133, 5, 232, 1)',
-					600: 'rgba(120, 5, 209, 1)',
-					700: 'rgba(100, 4, 174, 1)',
-					800: 'rgba(80, 3, 139, 1)',
-					900: 'rgba(65, 2, 114, 1)'
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+					foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)'
 				},
-				success: {
-					50: 'rgba(218, 247, 228, 1)',
-					100: 'rgba(205, 244, 220, 1)',
-					200: 'rgba(193, 242, 211, 1)',
-					300: 'rgba(155, 234, 184, 1)',
-					400: 'rgba(81, 218, 131, 1)',
-					500: 'rgba(6, 202, 78, 1)',
-					600: 'rgba(5, 182, 70, 1)',
-					700: 'rgba(5, 152, 59, 1)',
-					800: 'rgba(4, 121, 47, 1)',
-					900: 'rgba(3, 99, 38, 1)'
+				muted: {
+					DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
+					foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
 				},
-				warning: {
-					50: 'rgba(219, 248, 233, 1)',
-					100: 'rgba(208, 245, 225, 1)',
-					200: 'rgba(196, 243, 218, 1)',
-					300: 'rgba(160, 235, 195, 1)',
-					400: 'rgba(89, 221, 150, 1)',
-					500: 'rgba(18, 206, 105, 1)',
-					600: 'rgba(16, 185, 95, 1)',
-					700: 'rgba(14, 155, 79, 1)',
-					800: 'rgba(11, 124, 63, 1)',
-					900: 'rgba(9, 101, 51, 1)'
+				accent: {
+					DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
+					foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
 				},
-				error: {
-					50: 'rgba(236, 237, 217, 1)',
-					100: 'rgba(230, 231, 205, 1)',
-					200: 'rgba(224, 225, 192, 1)',
-					300: 'rgba(205, 207, 155, 1)',
-					400: 'rgba(167, 170, 79, 1)',
-					500: 'rgba(129, 134, 4, 1)',
-					600: 'rgba(116, 121, 4, 1)',
-					700: 'rgba(97, 101, 3, 1)',
-					800: 'rgba(77, 80, 2, 1)',
-					900: 'rgba(63, 66, 2, 1)'
+				popover: {
+					DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
+					foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
 				},
-				surface: {
-					50: 'rgba(243, 247, 231, 1)',
-					100: 'rgba(238, 244, 223, 1)',
-					200: 'rgba(234, 242, 215, 1)',
-					300: 'rgba(222, 233, 191, 1)',
-					400: 'rgba(197, 217, 143, 1)',
-					500: 'rgba(172, 201, 95, 1)',
-					600: 'rgba(155, 181, 86, 1)',
-					700: 'rgba(129, 151, 71, 1)',
-					800: 'rgba(103, 121, 57, 1)',
-					900: 'rgba(84, 98, 47, 1)'
+				card: {
+					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
 				}
 			},
-			lineHeight: {
-				hero: '4.5rem'
-			},
-			spacing: {
-				128: '32rem',
-				144: '36rem'
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: [...fontFamily.sans],
 				graffiti: ['GraffitiFont', 'sans-serif'],
 				sfo: ['SFProFont', 'sans-serif']
 			}
 		}
 	},
-	plugins: []
-} satisfies Config;
+	plugins: [typography]
+};
+
+export default config;

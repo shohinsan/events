@@ -1,8 +1,3 @@
-// See https://kit.svelte.dev/docs/types#app
-
-import type { ComponentType } from 'svelte';
-
-// for information about these interfaces
 declare global {
 	namespace App {
 		interface Error {
@@ -28,12 +23,10 @@ declare global {
 	}
 }
 
-
-
 type Data = {
 	name: string;
 	email: string;
-	phone?: number | undefined;
+	phone: string | undefined;
 	message: string;
 };
 

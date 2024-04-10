@@ -1,5 +1,5 @@
 import type { ComponentType } from 'svelte';
-import { About, Projects, Contact, Calendar } from '$icons';
+import { About, Projects, Contact, Calendar, Article } from '$icons';
 
 class Navigation {
 	name: string;
@@ -29,6 +29,7 @@ const createNavigation = [
 	new Navigation('About', '/', About),
 	new Navigation('Projects', '/projects', Projects),
 	new Navigation('Life', '/life', Calendar),
+	new Navigation('Articles', '/articles', Article),
 	new Navigation('Contact', '/contact', Contact)
 ];
 

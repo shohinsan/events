@@ -1,25 +1,11 @@
 <script>
 	import { page } from '$app/stores';
 	import { Download } from '$icons';
-	import { resume } from '$source';
 	import { link, site } from '$seeds';
+	import { cn } from '$source/lib/utils'; // Importing cn function
+	import { Button } from '$shadcn/button';
 
 	export let data;
-
-	const download = async () => {
-		try {
-			const blob = await (await fetch(resume)).blob();
-			const url = URL.createObjectURL(blob);
-			const a = Object.assign(document.createElement('a'), {
-				href: url,
-				download: 'Shohin_Abdulkhamidov_Resume.pdf'
-			});
-			a.click();
-			setTimeout(() => URL.revokeObjectURL(url), 0);
-		} catch (error) {
-			console.error('Error fetching PDF or initiating download:', error);
-		}
-	};
 </script>
 
 <svelte:head>
@@ -29,22 +15,22 @@
 	<meta name="Description" content={site.createSite.description} />
 </svelte:head>
 
-<div class="my-16 sm:mt-32 sm:mb-52">
+<div class={cn('my-16 sm:mb-52 sm:mt-32')}>
 	<div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
 		<div class="lg:pl-20">
 			<div class="max-w-xs px-2.5 lg:max-w-none">
 				<img
 					src={data.myimage}
 					alt="Shohin Abdulkhamidov"
-					class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
+					class="aspect-square rotate-3 rounded-2xl bg-zinc-800 object-cover"
 				/>
 			</div>
 		</div>
 		<div class="lg:order-first lg:row-span-2">
-			<h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
+			<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
 				I’m Shohin Abdulkhamidov, an inspiring Software Engineer based in California.
 			</h1>
-			<div class="mt-6 space-y-7 text-base text-zinc-400">
+			<div class="mt-6 space-y-7 text-base">
 				<p>
 					Born and raised in Tajikistan, I moved to the United States in 2017 to pursue my dream of
 					becoming a Software Engineer. I graduated from San Jose State University, majoring in
@@ -56,27 +42,30 @@
 					mine, and I'm always looking for ways to add more excitement to my gaming experience or
 					improve my skills. It's a fantastic way for me to unwind and have some fun.
 				</p>
-				
+
 				<p>
 					Here are a few technologies I've been working with recently:
-					<span class="text-zinc-200">SvelteKit, Java, and Python.</span>
+					<span class="">SvelteKit, Java, and Python.</span>
 					Now, I'm thinking about expanding my skill set even further by
-					<span class="text-zinc-200">learning Golang</span>
+					<span class="">learning Golang</span>
 					and getting further into understanding at api architecture protocols before practicing. Other
 					than that, keeping technology news in sync by reading
-					<a class="text-blue-500 hover:text-purple-400" href="https://tldr.tech/"
+					<a class="text-blue-500 hover:text-primary" href="https://tldr.tech/"
 						>tldr.tech newsletters</a
 					>
 				</p>
 				<p>
-					To mention, my personal website was built with <span class="text-zinc-200"
+					To mention, my personal website was built with <span class=""
 						>SvelteKit, TypeScript, TailwindCSS,</span
 					>
 					deployed to
-					<span class="text-zinc-200">Cloudflare Pages,</span> integrated with
-					<span class="text-zinc-200">Telegram Bot API</span>
-					for contact form submission, enabled <span class="text-zinc-200">PWA</span> for download
-					and offline use, and improved <span class="text-zinc-200">Conversion Rate Optimization</span>.
+					<span>Cloudflare Pages,</span> integrated with
+					<span>Telegram Bot API</span>
+					for contact form submission,
+					<span>GitHub CMS</span> supported by <span>tailwind's typography plugin</span> for article posts,
+					enabled <span class="">PWA</span> for download and offline
+					use, and improved
+					<span>Conversion Rate Optimization</span>.
 				</p>
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a question, or
@@ -85,18 +74,24 @@
 			</div>
 		</div>
 		<div class="lg:pl-20">
-			<button
-				on:click={download}
-				class="group bg-zinc-700 my-8 w-full rounded-md px-3 py-2 items-center text-center justify-center flex hover:bg-zinc-400"
-			>
-				<span class="mr-5">Download CV</span>
-				<Download />
-			</button>
+			<form method="GET" action="SHOHIN_ABDULKHAMIDOV_RESUME">
+				<Button
+					type="submit"
+					class={cn(`
+            group my-8 flex w-full items-center justify-center rounded-md px-3 py-2 text-center
+        `)}
+				>
+					<span class="mr-5">Download CV</span>
+					<Download /></Button
+				>
+			</form>
 
 			{#each link.professional as { name, href, icon }}
 				<ul
 					role="list"
-					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-purple-400"
+					class={cn(`
+						group flex items-center text-sm font-medium transition hover:text-primary
+					`)}
 				>
 					{#if icon}
 						<span class="flex-shrink-0">
@@ -105,19 +100,23 @@
 					{/if}
 					<li
 						aria-current={$page.url.pathname === href ? 'page' : undefined}
-						class="inline-block py-2 px-4"
+						class={cn(`
+							inline-block px-4 py-2
+						`)}
 					>
 						<a {href}>{name}</a>
 					</li>
 				</ul>
 			{/each}
 
-			<div class="mt-8 border-t pt-8 border-zinc-700/40" />
+			<div class="mt-8 border-t border-zinc-700/40 pt-8" />
 
 			{#each link.personal as { name, href, icon }}
 				<ul
 					role="list"
-					class="group flex items-center text-sm font-medium transition text-zinc-200 hover:text-purple-400"
+					class={cn(`
+						group flex items-center text-sm font-medium  transition hover:text-primary
+					`)}
 				>
 					{#if icon}
 						<span class="flex-shrink-0">
@@ -126,7 +125,9 @@
 					{/if}
 					<li
 						aria-current={$page.url.pathname === href ? 'page' : undefined}
-						class="inline-block py-2 px-4"
+						class={cn(`
+							inline-block px-4 py-2
+						`)}
 					>
 						<a {href}>{name}</a>
 					</li>
