@@ -2,7 +2,10 @@
 	export let currentYear = new Date().getFullYear();
 	import { navigations } from '$seeds';
 	import { page } from '$app/stores';
-	import { scrollToTop } from '$source/lib/utils';
+
+	function scrollToTop() {
+		document.getElementById('logo')?.scrollIntoView({ behavior: 'instant' });
+	}
 </script>
 
 <footer class="flex-none">
@@ -15,8 +18,8 @@
 						class="inline-block px-2 py-2"
 					>
 						<a
-							{href}
 							on:click={scrollToTop}
+							{href}
 							class="transition-colors duration-300 ease-in-out hover:text-primary">{name}</a
 						>
 						{#if name !== 'Contact'}
@@ -25,6 +28,9 @@
 					</li>
 				{/each}
 			</div>
+			<a on:click={scrollToTop} href="privacy" class="text-sm font-medium text-primary"
+				>Privacy Policy</a
+			>
 			<p class="text-sm">
 				&copy; {currentYear} Shohin A. All rights reserved.
 			</p>

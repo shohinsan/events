@@ -24,6 +24,9 @@ class Site {
 		scholarrabbit: URL;
 		twitter: URL;
 	};
+	privacy: {
+		effectiveDate: string;
+	};
 	keywords: string;
 
 	constructor(
@@ -50,6 +53,9 @@ class Site {
 			scholarrabbit: URL;
 			twitter: URL;
 		},
+		privacy: {
+			effectiveDate: string;
+		},
 		keywords: string
 	) {
 		this.name = name;
@@ -58,6 +64,7 @@ class Site {
 		this.description = description;
 		this.links = links;
 		this.projects = projects;
+		this.privacy = privacy;
 		this.keywords = keywords;
 	}
 }
@@ -85,6 +92,9 @@ const createSite = new Site(
 		bookup: new URL('https://github.com/shohinsan/sjsu_cs_151'),
 		scholarrabbit: new URL('https://github.com/shohinsan/sjsu_cmpe_131'),
 		twitter: new URL('https://github.com/shohinsan/Postwitter')
+	},
+	{
+		effectiveDate: 'January 1, 2023'
 	},
 	'web development, svelte, portfolio'
 );
