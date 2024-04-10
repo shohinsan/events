@@ -13,4 +13,5 @@ export { default as Link } from './Link.svelte';
 export { default as Logo } from './Logo.svelte';
 export { default as Steam } from './Steam.svelte';
 export { default as X } from './X.svelte';
+export { default as Article } from './Article.svelte';
 export { default as myicon } from './myicon.png';

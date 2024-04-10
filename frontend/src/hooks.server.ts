@@ -1,6 +1,6 @@
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
-import { newTelegramBotApp } from '$lib';
+import { newTelegramBotApp } from '$lib/telegram';
 
 const handleCommunication: Handle = async ({ event, resolve }) => {
 	await newTelegramBotApp();
@@ -9,11 +9,6 @@ const handleCommunication: Handle = async ({ event, resolve }) => {
 
 const i18n: Handle = async ({ event, resolve }) => {
 	const locale = 'en';
-	const initData = {
-		locale
-	};
-
-	event.locals.initData = initData;
 
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {

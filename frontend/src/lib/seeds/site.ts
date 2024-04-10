@@ -1,5 +1,5 @@
 import { dev } from '$app/environment';
-import { me } from '$source';
+import { me } from '../personal';
 
 class Site {
 	name: string;

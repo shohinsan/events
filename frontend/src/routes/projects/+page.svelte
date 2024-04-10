@@ -1,22 +1,21 @@
 <script lang="ts">
 	import { project } from '$seeds';
 	import { Link } from '$icons';
+	import { cn } from '$source/lib/utils'; // Importing cn function
+	import * as Tabs from '$lib/components/ui/tabs';
+	import { Badge } from '$lib/components/ui/badge';
+	import * as Pagination from '$shadcn/pagination';
+	import * as Card from '$shadcn/card';
 
-	const tabs = [
-		{ label: 'All', category: null, selected: true },
-		{ label: 'Web', category: 'Web', selected: false },
-		{ label: 'Mobile', category: 'Mobile', selected: false },
-		{ label: 'Figma', category: 'Figma', selected: false }
-	];
+	let activeTab: string = 'All';
+	let categorized: any[] = project;
 
-	let activeTab = tabs[0].label;
-	let categorized = project;
-
-	const handleTabClick = (label: string) => {
-		activeTab = label;
-		categorized =
-			label === tabs[0].label ? project : project.filter((proj) => proj.category === label);
+	const handleTabClick = (value: string) => {
+		activeTab = value;
+		categorized = value === 'All' ? project : project.filter((proj) => proj.category === value);
 	};
+
+	const categories = ['All', ...new Set(project.map((proj) => proj.category))];
 </script>
 
 <svelte:head>
@@ -26,9 +25,9 @@
 	<meta name="Description" content="Dare you check out my projects" />
 </svelte:head>
 
-<div class="my-16 sm:mt-32 sm:mb-52">
+<div class={cn('my-16 sm:mb-52 sm:mt-32')}>
 	<div
-		class="grid grid-cols-1 gap-y-16 lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12 lg:max-w-[700px]"
+		class="grid grid-cols-1 gap-y-16 lg:max-w-[700px] lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12"
 	>
 		<div class="lg:order-first lg:row-span-2">
 			<h2 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
@@ -43,55 +42,131 @@
 		</div>
 	</div>
 
-	<div class="flex pt-5 ">
+	<!-- Dynamic Tabs -->
+	<Tabs.Root bind:value={activeTab} class="my-5">
+		<Tabs.List class="flex">
+			{#each categories as category}
+				<Tabs.Trigger
+					class="w-1/3 hover:text-primary"
+					value={category}
+					on:click={() => handleTabClick(category)}>{category}</Tabs.Trigger
+				>
+			{/each}
+		</Tabs.List>
+		{#each categories as category}
+			<Tabs.Content value={category}>
+				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					{#each categorized as { name, description, href, tags, host, state }}
+						<a {href} class="group">
+							<div class="flex h-full flex-col">
+								<div class="flex h-full flex-col justify-between rounded-lg border p-4 shadow-md">
+									<!-- Card content -->
+									<h3 class="mb-2 text-xl font-semibold">{name}</h3>
+									<p class="mb-4">{description}</p>
+									<div class="flex flex-wrap gap-3">
+										{#each tags as tag}
+											<Badge>{tag}</Badge>
+										{/each}
+									</div>
+									<div class="mt-8 flex items-center justify-between">
+										<div class="flex items-center gap-2">
+											<Link />
+											<span class="group-hover:text-primary">{host}</span>
+										</div>
+										<span
+											class={cn(`
+                                                ${state === 'In Progress' ? 'group-hover:text-yellow-400' : ''}
+                                                ${state === 'Completed' ? 'group-hover:text-green-400' : ''}
+                                            `)}>{state}</span
+										>
+									</div>
+								</div>
+							</div>
+						</a>
+					{/each}
+				</div>
+			</Tabs.Content>
+		{/each}
+	</Tabs.Root>
+
+	<!-- <Pagination.Root {count} {perPage} {siblingCount} let:pages let:currentPage>
+		<Pagination.Content>
+			<Pagination.Item>
+				<Pagination.PrevButton />
+			</Pagination.Item>
+			{#each pages as page (page.key)}
+				{#if page.type === 'ellipsis'}
+					<Pagination.Item>
+						<Pagination.Ellipsis />
+					</Pagination.Item>
+				{:else}
+					<Pagination.Item>
+						<Pagination.Link {page} isActive={currentPage == page.value}>
+							{page.value}
+						</Pagination.Link>
+					</Pagination.Item>
+				{/if}
+			{/each}
+			<Pagination.Item>
+				<Pagination.NextButton />
+			</Pagination.Item>
+		</Pagination.Content>
+	</Pagination.Root> -->
+</div>
+
+<!-- Old code -->
+<!-- <div class={cn('flex pt-5')}>
 		{#each tabs as tab (tab.label)}
 			<button
 				on:click={() => handleTabClick(tab.label)}
-				class="border-purple-400 text-purple-400 bg-zinc-800 {activeTab === tab.label
-					? 'active w-1/4 border-purple-400 text-purple-400 border-b-2 py-4 px-1 text-center text-sm font-medium'
-					: 'w-1/4 border-transparent text-zinc-200 border-transparent border-zinc-200 border-b-2 hover:border-purple-300 hover:text-purple-300 hover:border-b-2  py-4 px-1 text-center text-sm font-medium'}"
+				class={cn(`
+					{activeTab === tab.label
+					? 'active font-medium'
+						: 'w-1/4 font-medium'} w-1/4 border-b-2 border-b-2 border-purple-400 border-purple-400 border-transparent border-transparent border-zinc-200
+						bg-zinc-800 px-1 px-1 py-4 py-4 text-center text-center text-sm text-sm text-purple-400 text-purple-400 text-zinc-200 hover:border-b-2 hover:border-purple-300 hover:text-purple-300
+				`)}
 			>
 				{tab.label}
 			</button>
 		{/each}
-	</div>
+	</div> -->
 
-	<div
-		class="
-    grid grid-cols-1 gap-x-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+<!-- <div
+		class={cn(`
+			grid grid-cols-1 gap-x-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+		`)}
 	>
 		{#each categorized as { name, description, href, tags, host, state }}
-			<ul class="group hover:bg-zinc-800 rounded-xl px-5 py-5 mt-10 shadow-xl">
+			<ul class="group mt-10 rounded-xl px-5 py-5 shadow-xl hover:bg-zinc-800">
 				<a {href} class="group">
-					<!-- <div
-						class="relative flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-zinc-800 ring-0"
-					>
-						<img src={icon} alt="Shohin's Pictures" class="h-8 w-8 rounded" />
-					</div> -->
-
 					<h1 class="mt-5 text-zinc-100">
 						{name}
 					</h1>
 
-					<h2 class="text-sm mt-5 text-zinc-500">
+					<h2 class="mt-5 text-sm text-zinc-500">
 						{description}
 					</h2>
 
-					<li class="text-zinc-300 mt-5">
+					<li class="mt-5 text-zinc-300">
 						{#if tags}
 							<div class="flex flex-wrap">
 								{#each tags as tag}
 									<span
-										class="mr-2 mb-2 bg-zinc-600 rounded-md text-sm px-1 py-1 whitespace-nowrap overflow-ellipsis"
-										>{`# ${tag}`}</span
+										class={cn(`
+											mb-2 mr-2 overflow-ellipsis whitespace-nowrap rounded-md bg-zinc-600 px-1 py-1 text-sm
+										`)}
 									>
+										{`# ${tag}`}
+									</span>
 								{/each}
 							</div>
 						{/if}
 					</li>
 
 					<div
-						class="flex justify-between items-end flex items-center mt-5 text-zinc-200 transition-colors group-hover:text-purple-400"
+						class={cn(`
+							mt-5 flex flex items-end items-center justify-between text-zinc-200 transition-colors group-hover:text-purple-400
+						`)}
 					>
 						<div class="flex items-center">
 							<Link />
@@ -99,16 +174,49 @@
 						</div>
 						<div>
 							<span
-								class={state === 'In Progress'
-									? 'group-hover:text-yellow-400'
-									: state === 'Completed'
-										? 'group-hover:text-green-400'
-										: ''}>{state}</span
+								class={cn(`
+									{state === 'In Progress'
+										? 'group-hover:text-yellow-400'
+										: state === 'Completed'
+											? 'group-hover:text-green-400'
+											: ''}
+								`)}
 							>
+								{state}
+							</span>
 						</div>
 					</div>
 				</a>
 			</ul>
 		{/each}
-	</div>
-</div>
+	</div> -->
+<!-- </div> -->
+
+<!-- {#each categorized as { name, description, href, tags, host, state }}
+                    <ul class="group mt-10 rounded-xl px-5 py-5 shadow-xl hover:bg-zinc-800">
+                        <a {href} class="group">
+                            <h1 class="mt-5 text-zinc-100">{name}</h1>
+                            <h2 class="mt-5 text-sm text-zinc-500">{description}</h2>
+                            <li class="mt-5 text-zinc-300">
+                                {#if tags}
+                                    <div class="flex flex-wrap">
+                                        {#each tags as tag}
+                                            <span class={cn(`mb-2 mr-2 overflow-ellipsis whitespace-nowrap rounded-md bg-zinc-600 px-1 py-1 text-sm`)}>
+                                                {`# ${tag}`}
+                                            </span>
+                                        {/each}
+                                    </div>
+                                {/if}
+                            </li>
+                            <div class={cn(`mt-5 flex flex items-end items-center justify-between text-zinc-200 transition-colors group-hover:text-purple-400`)}>
+                                <div class="flex items-center">
+                                    <Link />
+                                    <span class="ml-2">{host}</span>
+                                </div>
+                                <div>
+                                    <span class={cn(`{state === 'In Progress' ? 'group-hover:text-yellow-400' : state === 'Completed' ? 'group-hover:text-green-400' : ''}`)}>{state}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </ul>
+                {/each} -->

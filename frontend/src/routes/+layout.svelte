@@ -1,9 +1,14 @@
 <script>
+	import '$styles/tailwind.pcss';
+	import '$styles/font.css';
 	import '$styles/app.css';
+	
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
-	import { DesktopNav, MobileNav, Footer, Metadata } from '$components';
-	import Analytics from '$source/lib/components/Analytics.svelte';
+	import { Navbar, Footer, Metadata } from '$components/system';
+	import { Toaster } from '$components/ui/sonner';
+	import { ModeWatcher, setMode } from 'mode-watcher';
+	import { cn } from '$source/lib/utils'; // Importing cn function
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -32,23 +37,24 @@
 	}
 
 	onMount(() => {
+		setMode('dark');
 		detectSWUpdate();
 	});
 </script>
 
+<ModeWatcher />
+<Toaster />
 <Metadata />
-<Analytics />
 
-<div class="flex bg-zinc-50 overflow-y-scroll font-sfo">
-	<div class="fixed inset-0 flex bg-black justify-center sm:px-8 overflow-y-scroll">
+<div class={cn(' flex overflow-y-scroll font-sfo')}>
+	<div class="fixed inset-0 flex justify-center overflow-y-scroll sm:px-8">
 		<div class="flex w-full max-w-7xl lg:px-8">
-			<div class="w-full h-max ring-1 ring-zinc-100 bg-zinc-900 ring-zinc-300/20">
-				<DesktopNav />
+			<div class="h-max w-full ring-1 ring-muted">
+				<Navbar />
 				<div class="relative flex w-full flex-col">
-					<main class="flex-auto mx-10 md:mx-20">
+					<main class="mx-10 flex-auto md:mx-20">
 						<slot />
 						<Footer />
-						<MobileNav />
 					</main>
 				</div>
 			</div>
