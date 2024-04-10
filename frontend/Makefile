@@ -23,7 +23,7 @@ run:
 # Node modules
 
 upgrade-modules:
-	npx npm-check-updates -u
+	bunx npm-check-updates -u
 
 reinstall-modules:
 	rm -rf node_modules && npm install

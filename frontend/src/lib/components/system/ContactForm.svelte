@@ -6,7 +6,7 @@
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import { toast } from 'svelte-sonner';
 	import v, { type ContactSchema } from '$lib/validation-schema';
- 
+
 	function time() {
 		const currentDate = new Date();
 		const options: any = {
@@ -43,7 +43,7 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<form method="POST" use:enhance>
+<form method="POST" action="/api/contact" use:enhance>
 	<!-- Name -->
 	<Form.Field {form} name="name">
 		<Form.Control let:attrs>
