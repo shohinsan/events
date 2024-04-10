@@ -60,8 +60,7 @@
 					<span>Cloudflare Pages,</span> integrated with
 					<span>Telegram Bot API</span>
 					for contact form submission,
-					<span>GitHub CMS</span> supported by <span>tailwind's typography plugin</span> for article
-					posts, enabled <span class="">PWA</span> for download and offline use, and improved
+					enabled <span class="">PWA</span> for download and offline use, and improved
 					<span>Conversion Rate Optimization</span>.
 				</p>
 				<p>
