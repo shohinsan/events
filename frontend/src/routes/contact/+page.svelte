@@ -2,7 +2,7 @@
 	import { cn } from '$source/lib/utils';
 	import type { PageData } from './$types';
 	import * as Card from '$lib/components/ui/card';
-	import ContactForm from '$components/system/ContactForm.svelte';
+	import { ContactForm } from '$components/system/index';
 	export let data: PageData;
 </script>
 

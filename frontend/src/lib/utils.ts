@@ -7,9 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export function scrollToTop() {
-	document.getElementById('logo')?.scrollIntoView({ behavior: 'instant' });
-}
+// export function scrollToTop() {
+// 	document.getElementById('logo')?.scrollIntoView({ behavior: 'instant' });
+// }
 
 export function formatDate(input: string | number): string {
 	const date = new Date(input);

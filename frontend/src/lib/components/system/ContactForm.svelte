@@ -43,7 +43,7 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<form method="POST" action="/api/contact" use:enhance>
+<form method="POST" use:enhance>
 	<!-- Name -->
 	<Form.Field {form} name="name">
 		<Form.Control let:attrs>

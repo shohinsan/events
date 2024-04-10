@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { navigations } from '$seeds';
-	import { cn, scrollToTop } from '$source/lib/utils';
+	import { cn } from '$source/lib/utils';
+
+	function scrollToTop() {
+		document.getElementById('logo')?.scrollIntoView({ behavior: 'instant' });
+	}
 </script>
 
 <header
@@ -40,7 +44,7 @@
 </header>
 
 <!-- Mobile -->
-<!-- <div
+<div
 	class="fixed bottom-0 left-0 z-50 h-16 w-full border-t border-secondary bg-secondary sm:hidden"
 >
 	<div class="mx-auto grid h-full max-w-lg grid-cols-4">
@@ -73,4 +77,4 @@
 			</div>
 		{/each}
 	</div>
-</div> -->
+</div>

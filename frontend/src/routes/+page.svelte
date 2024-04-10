@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { Download } from '$icons';
 	import { link, site } from '$seeds';
-	import { cn } from '$source/lib/utils'; // Importing cn function
+	import { cn } from '$source/lib/utils';
 	import { Button } from '$shadcn/button';
 </script>
 
@@ -58,8 +58,7 @@
 					>
 					deployed to
 					<span>Cloudflare Pages,</span> integrated with
-					<span>Telegram Bot API</span>
-					for contact form submission,
+					<span>Telegram Bot API</span> for contact form submission, enabled <span class="">PWA</span> for download and offline use, and improved
 					enabled <span class="">PWA</span> for download and offline use, and improved
 					<span>Conversion Rate Optimization</span>.
 				</p>
