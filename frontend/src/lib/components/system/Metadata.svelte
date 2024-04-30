@@ -2,10 +2,12 @@
 	import { page } from '$app/stores';
 	import { site } from '$lib/seeds';
 	export let title: string = site.createSite.name;
+	
 
 	$: title = $page.data?.title
 		? `${$page.data.title} - ${site.createSite.name}`
 		: site.createSite.name;
+
 </script>
 
 <svelte:head>
@@ -32,3 +34,15 @@
 	<link rel="shortcut icon" href="/favicon-16x16.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </svelte:head>
+
+<!-- 
+
+	import { browser } from '$app/environment';
+
+	$: if (browser && window.clarity) {
+		(function (c, l, a, r, i, t, y) {
+
+		})(window, document, 'clarity', 'script', 'm4h2srehhk');
+	}
+ 
+-->
