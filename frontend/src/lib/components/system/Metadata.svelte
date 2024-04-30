@@ -2,11 +2,27 @@
 	import { page } from '$app/stores';
 	import { site } from '$lib/seeds';
 	export let title: string = site.createSite.name;
+	
 
 	$: title = $page.data?.title
 		? `${$page.data.title} - ${site.createSite.name}`
 		: site.createSite.name;
+
+
+	 
+
+
+
+
 </script>
+
+<script type="ts">
+	(function(c,l,a,r,i,t,y){
+	    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+	    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+	    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+	    })(window, document, "clarity", "script", "m4h2srehhk");
+</script> 
 
 <svelte:head>
 	<title>{title}</title>
@@ -32,3 +48,15 @@
 	<link rel="shortcut icon" href="/favicon-16x16.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </svelte:head>
+
+<!-- 
+
+	import { browser } from '$app/environment';
+
+	$: if (browser && window.clarity) {
+		(function (c, l, a, r, i, t, y) {
+
+		})(window, document, 'clarity', 'script', 'm4h2srehhk');
+	}
+ 
+-->

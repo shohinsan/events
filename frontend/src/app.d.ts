@@ -4,18 +4,29 @@ declare global {
 			code?: string;
 			errorId?: string;
 		}
+
 		interface Locals {
 			locale?: string;
 		}
 
 		// interface PageData {}
 		// interface Platform {}
+	}
 
-		declare interface Window {
-			'ga-disable-G-XMWD9Z9L3P': boolean;
-			fbq: (...args: unknown[]) => void;
-			gtag: (...args: unknown[]) => void;
-		}
+	declare interface Window {
+		'ga-disable-G-XMWD9Z9L3P': boolean;
+		fbq: (...args: unknown[]) => void;
+		gtag: (...args: unknown[]) => void;
+		clarity: (...args: unknown[]) => void;
+		// clarity: (
+		// 	c: Window,
+		// 	l: Document,
+		// 	a: string,
+		// 	r: string,
+		// 	i: string,
+		// 	t: HTMLElement | undefined,
+		// 	y: Element | undefined
+		// ) => any;
 	}
 
 	declare interface Document {
