@@ -1,9 +1,9 @@
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
-import { newTelegramBotApp } from '$lib/telegram';
+// import { newTelegramBotApp } from '$lib/telegram';
 
 const handleCommunication: Handle = async ({ event, resolve }) => {
-	await newTelegramBotApp();
+	// await newTelegramBotApp();
 	return await resolve(event);
 };
 
