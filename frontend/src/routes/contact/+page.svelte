@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { cn } from '$source/lib/utils';
 	import type { PageData } from './$types';
-	import * as Card from '$lib/components/ui/card';
-	import { ContactForm } from '$components/system/index';
+	import * as Card from '@/shared/ui/card';
+	import { cn } from '@/shared/lib/utils';
+	import { ContactFormData } from '@/widgets';
 	export let data: PageData;
 </script>
 
@@ -32,7 +32,7 @@
 				</Card.Description>
 			</Card.Header>
 			<Card.Content>
-				<ContactForm data={data.form} />
+				<ContactFormData data={data.form} />
 			</Card.Content>
 		</Card.Root>
 	</div>

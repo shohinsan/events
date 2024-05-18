@@ -1,19 +1,20 @@
 <script lang="ts">
-	import { project } from '$seeds';
-	import { Link } from '$icons';
-	import { cn } from '$source/lib/utils';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { Badge } from '$lib/components/ui/badge';
+	import { cn } from '@/shared/lib/utils'
+	import * as Tabs from '@/shared/ui/tabs'
+	import { Badge } from '@/shared/ui/badge'
+	import { Link } from '@/shared/icons'
+	import { projects } from '@/entities'
 
-	let activeTab: string = 'All';
-	let categorized: any[] = project;
+	let activeTab: string = 'All'
+	let categorized: any[] = projects
 
 	const handleTabClick = (value: string) => {
-		activeTab = value;
-		categorized = value === 'All' ? project : project.filter((proj) => proj.category === value);
-	};
+		activeTab = value
+		categorized =
+			value === 'All' ? projects : projects.filter((proj) => proj.category === value)
+	}
 
-	const categories = ['All', ...new Set(project.map((proj) => proj.category))];
+	const categories = ['All', ...new Set(projects.map((proj) => proj.category))]
 </script>
 
 <svelte:head>
@@ -33,9 +34,10 @@
 			</h2>
 
 			<p class="mt-6 text-base text-zinc-400">
-				I’ve worked on tons of little projects over the years but these are the ones that I’m most
-				proud of. Many of them are open-source, so if you see something that piques your interest,
-				check out the code and contribute if you have ideas for how it can be improved.
+				I’ve worked on tons of little projects over the years but these are the ones that
+				I’m most proud of. Many of them are open-source, so if you see something that piques
+				your interest, check out the code and contribute if you have ideas for how it can be
+				improved.
 			</p>
 		</div>
 	</div>
@@ -57,7 +59,9 @@
 					{#each categorized as { name, description, href, tags, host, state }}
 						<a {href} class="group">
 							<div class="flex h-full flex-col">
-								<div class="flex h-full flex-col justify-between rounded-lg border p-4 shadow-md">
+								<div
+									class="flex h-full flex-col justify-between rounded-lg border p-4 shadow-md"
+								>
 									<!-- Card content -->
 									<h3 class="mb-2 text-xl font-semibold">{name}</h3>
 									<p class="mb-4">{description}</p>

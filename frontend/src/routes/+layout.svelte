@@ -1,47 +1,48 @@
 <script>
-	import '$styles/tailwind.pcss';
-	import '$styles/font.css';
-	import '$styles/app.css';
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import { onMount } from 'svelte';
-	import { onNavigate } from '$app/navigation';
-	import { Navbar, Footer, Metadata } from '$components/system';
-	import { Toaster } from '$components/ui/sonner';
-	import { ModeWatcher, setMode } from 'mode-watcher';
-	import { cn } from '$source/lib/utils';
-	import NProgress from 'nprogress';
-	import 'nprogress/nprogress.css';
+	import '@/app/styles/tailwind.pcss'
+	import '@/app/styles/font.css'
+	import '@/app/styles/app.css'
+	import { afterNavigate, beforeNavigate } from '$app/navigation'
+	import { onMount } from 'svelte'
+	import { onNavigate } from '$app/navigation'
+	import { Toaster } from '@/shared/ui/sonner'
+	import { ModeWatcher, setMode } from 'mode-watcher'
+	import NProgress from 'nprogress'
+	import 'nprogress/nprogress.css'
+	import { cn } from '@/shared/lib/utils'
+	import { Navbar, Footer } from '@/widgets'
+	import { Metadata } from '@/app/index'
 
-	NProgress.configure({ showSpinner: false });
+	NProgress.configure({ showSpinner: false })
 
 	afterNavigate(() => {
-		NProgress.done();
-	});
+		NProgress.done()
+	})
 
 	beforeNavigate(() => {
-		NProgress.start();
-	});
+		NProgress.start()
+	})
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		if (!document.startViewTransition) return
 		return new Promise((resolve) => {
 			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
+				resolve()
+				await navigation.complete
+			})
+		})
+	})
 
 	onMount(() => {
-		setMode('dark');
-	});
+		setMode('dark')
+	})
 </script>
 
 <ModeWatcher />
 <Toaster />
 <Metadata />
 
-<div class={cn(' flex overflow-y-scroll font-sfo')}>
+<div class={cn(' flex overflow-y-scroll font-sfo ')}>
 	<div class="fixed inset-0 flex justify-center overflow-y-scroll sm:px-8">
 		<div class="flex w-full max-w-7xl lg:px-8">
 			<div class="h-max w-full ring-1 ring-muted">
