@@ -18,15 +18,6 @@ declare global {
 		fbq: (...args: unknown[]) => void;
 		gtag: (...args: unknown[]) => void;
 		clarity: (...args: unknown[]) => void;
-		// clarity: (
-		// 	c: Window,
-		// 	l: Document,
-		// 	a: string,
-		// 	r: string,
-		// 	i: string,
-		// 	t: HTMLElement | undefined,
-		// 	y: Element | undefined
-		// ) => any;
 	}
 
 	declare interface Document {
@@ -34,22 +25,4 @@ declare global {
 	}
 }
 
-type Data = {
-	name: string;
-	email: string;
-	phone: string | undefined;
-	message: string;
-};
-
-type Form = Omit<Data, keyof Custom>;
-
-interface Validation {
-	nameMissing?: string;
-	emailMissing?: string;
-	messageMissing?: string;
-	emailFormat?: string;
-	phoneFormat?: string;
-	phoneLimit?: string;
-}
-
-export { Data, Validation, Form, Window, Document };
+export { Window, Document };

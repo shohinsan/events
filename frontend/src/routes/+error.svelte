@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Button } from '$shadcn/button';
+	import { Button } from '@/shared/ui/button';
 
 	export let title: string;
 

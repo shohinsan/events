@@ -1,8 +1,8 @@
 <script>
-	import { Timeline } from '$components/system';
-	import { events } from '$seeds';
-	import * as Collapsible from '$lib/components/ui/collapsible';
-	import { cn } from '$source/lib/utils';
+	import * as Collapsible from '@/shared/ui/collapsible'
+	import { cn } from '@/shared/lib/utils'
+	import { Timeline } from '@/widgets'
+	import { events } from '@/entities'
 </script>
 
 <svelte:head>
@@ -35,7 +35,9 @@
 						</div>
 						<div class="ml-5 mt-5 text-sm">
 							<Collapsible.Root>
-								<Collapsible.Trigger class="hover:text-primary">{title}</Collapsible.Trigger>
+								<Collapsible.Trigger class="hover:text-primary"
+									>{title}</Collapsible.Trigger
+								>
 								<Collapsible.Content class="mt-2">
 									{description}
 								</Collapsible.Content>

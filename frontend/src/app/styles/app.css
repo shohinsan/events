@@ -1,0 +1,5 @@
+/* progress bar */
+
+#nprogress .bar {
+	background-color: hsl(var(--primary)) !important;
+}

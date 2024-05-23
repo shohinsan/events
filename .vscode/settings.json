@@ -1,5 +1,8 @@
 {
-	"workbench.editor.customLabels.patterns": {
-		"**/routes/**/{+server,+layout,+page,+error}.{svelte,ts,server.ts,js,server.js}": "/${dirname} (${filename})"
-	}
+  "workbench.editor.customLabels.patterns": {
+    "**/routes/**/{+server,+layout,+page,+error}.{svelte,ts,server.ts,js,server.js}": "/${dirname} (${filename})"
+  },
+  "files.watcherExclude": {
+    "**/node_modules/*/**": false
+  }
 }

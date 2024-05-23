@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { Download } from '$icons';
-	import { link, site } from '$seeds';
-	import { cn } from '$source/lib/utils';
-	import { Button } from '$shadcn/button';
+	import { page } from '$app/stores'
+	import { Download } from '@/shared/icons'
+	import { cn } from '@/shared/lib/utils'
+	import site from '@/app/site'
+	import { Button } from '@/shared/ui/button'
+	import link from '@/shared/lib/link'
 </script>
 
 <svelte:head>
@@ -30,15 +31,16 @@
 			</h1>
 			<div class="mt-6 space-y-7 text-base">
 				<p>
-					Born and raised in Tajikistan, I moved to the United States in 2017 to pursue my dream of
-					becoming a Software Engineer. I graduated from San Jose State University, majoring in
-					Software Engineering. I am passionate about building software that makes a difference in
-					people's lives.
+					Born and raised in Tajikistan, I moved to the United States in 2017 to pursue my
+					dream of becoming a Software Engineer. I graduated from San Jose State
+					University, majoring in Software Engineering. I am passionate about building
+					software that makes a difference in people's lives.
 				</p>
 				<p>
-					When I am not coding, I enjoy playing soccer and hiking. Gaming is also another passion of
-					mine, and I'm always looking for ways to add more excitement to my gaming experience or
-					improve my skills. It's a fantastic way for me to unwind and have some fun.
+					When I am not coding, I enjoy playing soccer and hiking. Gaming is also another
+					passion of mine, and I'm always looking for ways to add more excitement to my
+					gaming experience or improve my skills. It's a fantastic way for me to unwind
+					and have some fun.
 				</p>
 
 				<p>
@@ -46,8 +48,8 @@
 					<span class="">SvelteKit, Java, and Python.</span>
 					Now, I'm thinking about expanding my skill set even further by
 					<span class="">learning Golang</span>
-					and getting further into understanding at api architecture protocols before practicing. Other
-					than that, keeping technology news in sync by reading
+					and getting further into understanding at api architecture protocols before practicing.
+					Other than that, keeping technology news in sync by reading
 					<a class="text-blue-500 hover:text-primary" href="https://tldr.tech/"
 						>tldr.tech newsletters</a
 					>
@@ -58,13 +60,15 @@
 					>
 					deployed to
 					<span>Cloudflare Pages,</span> integrated with
-					<span>Telegram Bot API</span> for contact form submission, enabled <span class="">PWA</span> for download and offline use, and improved
-					enabled <span class="">PWA</span> for download and offline use, and improved
+					<span>Telegram Bot API</span> for contact form submission, enabled
+					<span class="">PWA</span>
+					for download and offline use, and improved enabled <span class="">PWA</span> for
+					download and offline use, and improved
 					<span>Conversion Rate Optimization</span>.
 				</p>
 				<p>
-					Feel free to reach out if you're looking for a new grad developer, have a question, or
-					just want to connect.
+					Feel free to reach out if you're looking for a new grad developer, have a
+					question, or just want to connect.
 				</p>
 			</div>
 		</div>
