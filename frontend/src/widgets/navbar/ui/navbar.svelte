@@ -47,7 +47,7 @@
 <div
 	class="fixed bottom-0 left-0 z-50 h-16 w-full border-t border-secondary bg-secondary sm:hidden"
 >
-	<div class="mx-auto grid h-full max-w-lg grid-cols-4">
+	<div class="mx-auto grid h-full max-w-lg grid-cols-5">
 		{#each navigations.mobile as { href, name, icon }}
 			<a
 				on:click={scrollToTop}
