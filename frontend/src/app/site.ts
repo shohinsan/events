@@ -23,6 +23,7 @@ class Site {
 		bookup: URL;
 		scholarrabbit: URL;
 		twitter: URL;
+		flexrent: URL;
 	};
 	privacy: {
 		effectiveDate: string;
@@ -52,6 +53,7 @@ class Site {
 			bookup: URL;
 			scholarrabbit: URL;
 			twitter: URL;
+			flexrent: URL;
 		},
 		privacy: {
 			effectiveDate: string;
@@ -91,7 +93,8 @@ const createSite = new Site(
 		starbucks: new URL('https://github.com/shohinsan/starbucks-enterprise-n-tier'),
 		bookup: new URL('https://github.com/shohinsan/sjsu_cs_151'),
 		scholarrabbit: new URL('https://github.com/shohinsan/sjsu_cmpe_131'),
-		twitter: new URL('https://github.com/shohinsan/Postwitter')
+		twitter: new URL('https://github.com/shohinsan/Postwitter'),
+		flexrent: new URL('https://www.figma.com/design/c6BSK1vEwPgJe8XVvR69z5/Flexrent?node-id=17-74063&t=fhZPAyUeFdrSb8gR-1')
 	},
 	{
 		effectiveDate: 'January 1, 2023'
