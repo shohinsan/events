@@ -47,7 +47,7 @@ const createProjects: Project[] = [
 		description: 'End-to-End Enterprise Software for ordering coffee',
 		tags: ['gcp', 'gke', 'spring-boot', 'cloud sql', 'java', 'docker'],
 		href: site.createSite.projects.starbucks.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.starbucks.host,
 		state: 'Completed',
 		category: 'Web'
 	}),
@@ -56,7 +56,7 @@ const createProjects: Project[] = [
 		description: 'Calendar app that helps you schedule meetings with your friends',
 		tags: ['typescript', 'sveltekit', 'postgresql', 'tailwindcss', 'golang'],
 		href: site.createSite.projects.meetminder.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.meetminder.host,
 		state: 'In Progress',
 		category: 'Web'
 	}),
@@ -65,7 +65,7 @@ const createProjects: Project[] = [
 		description: 'A static web app of my family tree. Collecting data at the moment.',
 		tags: ['sveltekit', 'css', 'typescript'],
 		href: site.createSite.projects.rootsrise.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.rootsrise.host,
 		state: 'In Progress',
 		category: 'Web'
 	}),
@@ -74,7 +74,7 @@ const createProjects: Project[] = [
 		description: 'A platform for farmers to sell their produce directly to consumers.',
 		tags: ['sveltekit', 'scss', 'bun', 'hono', 'mysql'],
 		href: site.createSite.projects.ifarmo.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.ifarmo.host,
 		state: 'Completed',
 		category: 'Web'
 	}),
@@ -83,7 +83,7 @@ const createProjects: Project[] = [
 		description: 'This is a description of the project that I worked on at SJSU',
 		tags: ['typescript', 'react', 'nextjs', 'tailwindcss', 'vercel', 'github actions'],
 		href: site.createSite.projects.bookup.href,
-		host: 'github.com',
+		host: site.createSite.projects.bookup.host,
 		state: 'Completed',
 		category: 'Web'
 	}),
@@ -92,7 +92,7 @@ const createProjects: Project[] = [
 		description: 'Note-taking app for students',
 		tags: ['flask', 'sqlite', 'bootstrap'],
 		href: site.createSite.projects.scholarrabbit.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.scholarrabbit.host,
 		state: 'Completed',
 		category: 'Web'
 	}),
@@ -101,9 +101,18 @@ const createProjects: Project[] = [
 		description: 'A platform for sharing your thoughts with the world',
 		tags: ['swift', 'firebase', 'cocoapods', 'xcode'],
 		href: site.createSite.projects.twitter.href,
-		host: site.createSite.projects.mortesense.host,
+		host: site.createSite.projects.twitter.host,
 		state: 'Completed',
 		category: 'Mobile'
+	})
+	new Project({
+		name: 'FlexRent',
+		description: 'A platform for renting a house',
+		tags: ['figma', 'design'],
+		href: site.createSite.projects.flexrent.href,
+		host: site.createSite.projects.flexrent.host,
+		state: 'Completed',
+		category: 'Figma'
 	})
 ]
 
