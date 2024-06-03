@@ -104,7 +104,7 @@ const createProjects: Project[] = [
 		host: site.createSite.projects.twitter.host,
 		state: 'Completed',
 		category: 'Mobile'
-	})
+	}),
 	new Project({
 		name: 'FlexRent',
 		description: 'A platform for renting a house',
