@@ -3,9 +3,10 @@ export async function GET({ setHeaders }) {
         'Content-Type': 'application/xml'
     });
 
-    const protocol = 'http://'; // no secure connection necessary
+    const protocol = 'http://';
+    const subdomain = 'www.';
     const domain = 'shohin.design';
-    const site = `${protocol}${domain}`;
+    const site = `${protocol}${subdomain}${domain}`;
     // 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
     const crawl = 'monthly';
 
@@ -19,13 +20,13 @@ export async function GET({ setHeaders }) {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
-            <loc>${site}</loc>
+            <loc>${site}/</loc>
             <changefreq>${crawl}</changefreq>
             <priority>0.7</priority>
         </url>
         ${urls.map(url => `
         <url>
-            <loc>${url.loc}</loc>
+            <loc>${url.loc}/</loc>
             <changefreq>${url.changefreq}</changefreq>
             <priority>${url.priority}</priority>
         </url>`).join('')}
