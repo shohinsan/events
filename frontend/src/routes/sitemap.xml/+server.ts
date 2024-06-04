@@ -3,7 +3,7 @@ export async function GET({ setHeaders }) {
         'Content-Type': 'application/xml'
     });
 
-    const protocol = 'https://';
+    const protocol = 'http://'; // no secure connection necessary
     const domain = 'shohin.design';
     const site = `${protocol}${domain}`;
     // 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
