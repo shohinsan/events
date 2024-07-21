@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import { Download } from '@/shared/icons'
+	import { Download, PWA, Cloudflare, Svelte, TypeScript, Telegram, CRO } from '@/shared/icons'
 	import { cn } from '@/shared/lib/utils'
 	import site from '@/app/site'
 	import { Button } from '@/shared/ui/button'
@@ -45,27 +45,27 @@
 
 				<p>
 					Here are a few technologies I've been working with recently:
-					<span class="">SvelteKit, Java, and Python.</span>
-					Now, I'm thinking about expanding my skill set even further by
-					<span class="">learning Golang</span>
-					and getting further into understanding at api architecture protocols before practicing.
-					Other than that, keeping technology news in sync by reading
-					<a class="text-blue-500 hover:text-primary" href="https://tldr.tech/"
-						>tldr.tech newsletters</a
+					<span>SvelteKit, NextJS, Java, and Python.</span>
+					I'm now expanding my skill set even further by
+					<span
+						>learning Golang and eventually making it my main go-to language. Lately,
+						due to the AI hype, I've become curious about PyTorch and AutoGen.</span
 					>
+					Additionally, I keep up with technology news by reading
+					<a
+						class="text-blue-500 hover:text-primary"
+						href="https://refer.tldr.tech/0f5ffe59">tldr.tech newsletters</a
+					>.
 				</p>
-				<p>
-					To mention, my personal website was built with <span class=""
-						>SvelteKit, TypeScript, TailwindCSS,</span
-					>
-					deployed to
-					<span>Cloudflare Pages,</span> integrated with
-					<span>Telegram Bot API</span> for contact form submission, enabled
-					<span class="">PWA</span>
-					for download and offline use, and improved enabled <span class="">PWA</span> for
-					download and offline use, and improved
-					<span>Conversion Rate Optimization</span>.
-				</p>
+				<div class="flex gap-4 select-none">
+					<Cloudflare width={36} height={36} />
+					<PWA width={36} height={36} />
+					<Svelte width={36} height={36} />
+					<TypeScript width={36} height={36} />
+					<Telegram width={36} height={36} />
+					<CRO width={36} height={36} />
+				</div>
+
 				<p>
 					Feel free to reach out if you're looking for a new grad developer, have a
 					question, or just want to connect.
