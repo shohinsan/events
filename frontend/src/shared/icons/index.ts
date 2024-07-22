@@ -18,7 +18,6 @@ export { default as Cloudflare } from './Cloudflare.svelte';
 export { default as PWA } from './PWA.svelte';
 export { default as Svelte } from './Svelte.svelte';
 export { default as TypeScript } from './TypeScript.svelte';
-export { default as CRO } from './CRO.svelte';
 
 
 export { default as myicon } from './myicon.png';
