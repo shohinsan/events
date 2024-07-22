@@ -22,7 +22,7 @@
 	<meta name="twitter:creator" content={site.createSite.name} />
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content={site.createSite.url + $page.url.pathname} />
+	<meta property="og:url" content={site.createSite.url.origin} />
 	<meta property="og:image" content={site.createSite.ogImage} />
 	<meta property="og:image:alt" content={site.createSite.name} />
 	<meta property="og:image:width" content="1200" />
