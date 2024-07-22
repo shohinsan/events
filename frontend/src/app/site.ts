@@ -1,33 +1,46 @@
 import { dev } from '$app/environment';
 
+interface Links {
+	github: URL;
+	linkedin: URL;
+	telegram: URL;
+	email: string;
+	instagram: URL;
+	steam: URL;
+	x: URL;
+}
+
+interface Projects {
+	meetminder: URL;
+	rootsrise: URL;
+	ifarmo: URL;
+	mortesense: URL;
+	starbucks: URL;
+	bookup: URL;
+	scholarrabbit: URL;
+	twitter: URL;
+	flexrent: URL;
+}
+
+interface Sitemap {
+	paths: string[];
+	crawl: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+	didCrawl: string;
+}
+
+interface Privacy {
+	effectiveDate: string;
+}
+
 class Site {
 	name: string;
 	url: URL;
 	ogImage: string;
 	description: string;
-	links: {
-		github: URL;
-		linkedin: URL;
-		telegram: URL;
-		email: string;
-		instagram: URL;
-		steam: URL;
-		x: URL;
-	};
-	projects: {
-		meetminder: URL;
-		rootsrise: URL;
-		ifarmo: URL;
-		mortesense: URL;
-		starbucks: URL;
-		bookup: URL;
-		scholarrabbit: URL;
-		twitter: URL;
-		flexrent: URL;
-	};
-	privacy: {
-		effectiveDate: string;
-	};
+	links: Links;
+	projects: Projects;
+	sitemap: Sitemap;
+	privacy: Privacy;
 	keywords: string;
 
 	constructor(
@@ -35,29 +48,10 @@ class Site {
 		url: URL,
 		ogImage: string,
 		description: string,
-		links: {
-			github: URL;
-			linkedin: URL;
-			telegram: URL;
-			email: string;
-			instagram: URL;
-			steam: URL;
-			x: URL;
-		},
-		projects: {
-			meetminder: URL;
-			rootsrise: URL;
-			ifarmo: URL;
-			mortesense: URL;
-			starbucks: URL;
-			bookup: URL;
-			scholarrabbit: URL;
-			twitter: URL;
-			flexrent: URL;
-		},
-		privacy: {
-			effectiveDate: string;
-		},
+		links: Links,
+		projects: Projects,
+		privacy: Privacy,
+		sitemap: Sitemap,
 		keywords: string
 	) {
 		this.name = name;
@@ -67,6 +61,7 @@ class Site {
 		this.links = links;
 		this.projects = projects;
 		this.privacy = privacy;
+		this.sitemap = sitemap;
 		this.keywords = keywords;
 	}
 }
@@ -98,6 +93,11 @@ const createSite = new Site(
 	},
 	{
 		effectiveDate: 'January 1, 2023'
+	},
+	{
+		paths: ['', 'projects', 'life', 'contact'],
+		crawl: 'monthly',
+		didCrawl: ''
 	},
 	'web development, svelte, portfolio'
 );
