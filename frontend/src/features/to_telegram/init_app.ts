@@ -1,4 +1,4 @@
-import { APP_TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$env/static/private'
+import { FORM_TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$env/static/private'
 import { menuButton, myCommands, myDescription } from '@/shared/api/telegram'
 import site from '@/app/site'
 import type { Bot } from './model/telegram'
@@ -14,7 +14,7 @@ const app = (botToken: string): Bot => {
 }
 
 const newTelegramBotApp = async () => {
-	const telegramBot = app(APP_TELEGRAM_BOT_TOKEN)
+	const telegramBot = app(FORM_TELEGRAM_BOT_TOKEN)
 	await telegramBot.setChatMenuButton?.(TELEGRAM_CHAT_ID, {
 		type: 'web_app',
 		text: 'Open',
