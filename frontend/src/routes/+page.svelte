@@ -69,68 +69,68 @@
 					Feel free to reach out if you're looking for a new grad developer, have a
 					question, or just want to connect.
 				</p>
-				<div class="lg:pl-20">
-					<form method="GET" action="SHOHIN_ABDULKHAMIDOV_RESUME">
-						<Button
-							type="submit"
-							class={cn(`
-					group my-8 flex w-full items-center justify-center rounded-md px-3 py-2 text-center
-				`)}
-						>
-							<span class="mr-5">Download CV</span>
-							<Download /></Button
-						>
-					</form>
-
-					{#each link.professional as { name, href, icon }}
-						<ul
-							role="list"
-							class={cn(`
-								group flex items-center text-sm font-medium transition hover:text-primary
-							`)}
-						>
-							{#if icon}
-								<span class="flex-shrink-0">
-									<svelte:component this={icon} />
-								</span>
-							{/if}
-							<li
-								aria-current={$page.url.pathname === href ? 'page' : undefined}
-								class={cn(`
-									inline-block px-4 py-2
-								`)}
-							>
-								<a {href}>{name}</a>
-							</li>
-						</ul>
-					{/each}
-
-					<div class="mt-8 border-t border-zinc-700/40 pt-8" />
-
-					{#each link.personal as { name, href, icon }}
-						<ul
-							role="list"
-							class={cn(`
-								group flex items-center text-sm font-medium  transition hover:text-primary
-							`)}
-						>
-							{#if icon}
-								<span class="flex-shrink-0">
-									<svelte:component this={icon} />
-								</span>
-							{/if}
-							<li
-								aria-current={$page.url.pathname === href ? 'page' : undefined}
-								class={cn(`
-									inline-block px-4 py-2
-								`)}
-							>
-								<a {href}>{name}</a>
-							</li>
-						</ul>
-					{/each}
-				</div>
 			</div>
+		</div>
+		<div class="lg:pl-20">
+			<form method="GET" action="SHOHIN_ABDULKHAMIDOV_RESUME">
+				<Button
+					type="submit"
+					class={cn(`
+            group mb-8 flex w-full items-center justify-center rounded-md px-3 text-center
+        `)}
+				>
+					<span class="mr-5">Download CV</span>
+					<Download /></Button
+				>
+			</form>
+
+			{#each link.professional as { name, href, icon }}
+				<ul
+					role="list"
+					class={cn(`
+						group flex items-center text-sm font-medium transition hover:text-primary
+					`)}
+				>
+					{#if icon}
+						<span class="flex-shrink-0">
+							<svelte:component this={icon} />
+						</span>
+					{/if}
+					<li
+						aria-current={$page.url.pathname === href ? 'page' : undefined}
+						class={cn(`
+							inline-block px-4 py-2
+						`)}
+					>
+						<a {href}>{name}</a>
+					</li>
+				</ul>
+			{/each}
+
+			<div class="mt-8 border-t border-zinc-700/40 pt-8" />
+
+			{#each link.personal as { name, href, icon }}
+				<ul
+					role="list"
+					class={cn(`
+						group flex items-center text-sm font-medium  transition hover:text-primary
+					`)}
+				>
+					{#if icon}
+						<span class="flex-shrink-0">
+							<svelte:component this={icon} />
+						</span>
+					{/if}
+					<li
+						aria-current={$page.url.pathname === href ? 'page' : undefined}
+						class={cn(`
+							inline-block px-4 py-2
+						`)}
+					>
+						<a {href}>{name}</a>
+					</li>
+				</ul>
+			{/each}
 		</div>
 	</div>
 </div>
