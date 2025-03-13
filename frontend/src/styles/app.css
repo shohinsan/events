@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+
+
+@theme {
+  --font-size-base: 16px;              
+  --font-size-heading: 24px;             
+  --font-weight-normal: 400;             
+  --font-weight-bold: 700;             
+  --space-small: 8px;                  
+  --space-medium: 16px;                  
+  --space-large: 32px;                  
+  
+  --radius-small: 4px;                
+  --radius-medium: 8px;                
+  --radius-large: 16px;                
+  --shadow-light: 0px 2px 4px rgba(0, 0, 0, 0.1);  
+  --shadow-medium: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  --shadow-dark: 0px 8px 16px rgba(0, 0, 0, 0.3);   
+
+  --breakpoint-*: initial;
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+
+  --animate-fade-in: fade-in 1s ease-in-out;
+  --animate-fade-out: fade-out 1s ease-in-out;
+  --animate-fade-in-up: fade-in-up 1s ease-in-out;
+  
+  --animate-clouds: move-clouds 15s linear infinite;
+
+  @keyframes move-clouds {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 0.6;
+    }
+
+    60% {
+      opacity: 0.8;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      transform: translateY(0) translateX(-0.2px);
+      opacity: 1;
+      font-weight: 500;
+    }
+
+    20% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0.5;
+    }
+
+    40% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0.3;
+    }
+
+    60% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0;
+    }
+
+    20% {
+      transform: translateY(24px) translateX(-0.2px);
+      opacity: 0.5;
+    }
+
+    80% {
+      transform: translateY(0) translateX(-0.2px);
+      opacity: 0.7;
+    }
+
+    100% {
+      transform: translateY(0) translateX(-0.2px);
+      opacity: 1;
+    }
+  }  
+}
+
+
+
+:root {
+  color-scheme: light dark;
+}
+.dark {
+  color-scheme: dark;
+}
+.light {
+  color-scheme: light;
+}
+
+@variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(.system, .system *) {
+      @slot;
+    }
+  }
+}
