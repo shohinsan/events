@@ -1,51 +1,39 @@
-import type { PageServerLoad, Actions } from './$types.js'
-import { fail } from '@sveltejs/kit'
-import { superValidate } from 'sveltekit-superforms'
-import { zod } from 'sveltekit-superforms/adapters'
+import type { Actions } from './$types.js'
 import { FORM_TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from '$env/static/private'
-import { newTelegramBotForm } from '@/features'
-import type { Data } from '@/widgets/form/model/types'
-import v from '@/widgets/form/validation/validation-schema'
 
-export const load: PageServerLoad = async () => {
-	return {
-		form: await superValidate(zod(v.contactSchema))
-	}
-}
+import type { Data } from '@/lib/utils/types.js'
+import newTelegramBot from '@/lib/utils/tg-send-message.js'
+import { fail } from '@sveltejs/kit'
+import v from '@/lib/utils/zod-validation.js'
 
 export const actions: Actions = {
 	default: async (event) => {
-		const form = await superValidate(event, zod(v.contactSchema))
-		const country = event.request.headers.get('cf-ipcountry') as string | undefined
+		const formData = Object.fromEntries(await event.request.formData());
+		const form = await v.contactSchema.safeParseAsync(formData);
 
-		await telegramBotMiddleware(
-			{
-				name: form.data.name,
-				email: form.data.email,
-				phone: form.data.phone,
-				message: form.data.message
-			},
-			country
-		)
+		if (!form.success) {
+			const errors = form.error.errors.map(err => ({
+				field: err.path[0],
+				message: err.message
+			}));
 
-		if (!form.valid) {
-			return fail(400, {
-				form
-			})
+			return fail(400, { errors });
 		}
-		return {
-			form
-		}
+
+		const { name, email, phone, message } = form.data;
+		const country = event.request.headers.get('cf-ipcountry') as string | undefined;
+
+		await telegramBotMiddleware({ name, email, phone, message }, country);
+
+		return { success: true }
 	}
-}
-
-// Text Formatting
+};
 
 const telegramBotMiddleware = async (
 	{ name, email, phone, message }: Data,
 	country: string | undefined
 ) => {
-	const telegramBot = newTelegramBotForm(FORM_TELEGRAM_BOT_TOKEN)
+	const telegramBot = newTelegramBot(FORM_TELEGRAM_BOT_TOKEN)
 
 	const textBuilder = `*New form submission from ${name}*
 
@@ -53,7 +41,7 @@ const telegramBotMiddleware = async (
 	|-------------------------
 	   *Email*   -  ${email}
 	   *Phone*  -  ${phone}
-	   *Country*  -  ${country}
+	   *Country*  -  ${country || 'Unknown'}
 
   | *Message*
 	 |------------------------

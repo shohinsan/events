@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	import * as Card from '@/shared/ui/card';
-	import { cn } from '@/shared/lib/utils';
-	import { ContactFormData } from '@/widgets';
-	export let data: PageData;
+	import { enhance } from '$app/forms';
+	import { page } from '$app/state';
+
+	let form = $derived(page.form);
 </script>
 
 <svelte:head>
@@ -13,27 +12,84 @@
 	<meta name="Description" content="Get in touch with Shohin" />
 </svelte:head>
 
-<div class={cn('my-16 sm:mb-52 sm:mt-32')}>
-	<div
-		class="grid grid-cols-1 gap-y-16 lg:max-w-[700px] lg:grid-cols-1 lg:grid-rows-[auto_1fr] lg:gap-y-12"
-	>
-		<div class="lg:order-first lg:row-span-2">
-			<h2 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">Contact</h2>
-			<p class="mt-6 text-base text-zinc-400">
-				Please feel free to contact me if you have any questions or would like to discuss a project.
-			</p>
-		</div>
+<div class="container mx-auto px-6 py-16 sm:py-24 lg:py-32">
+	<div class="mx-auto max-w-2xl text-center">
+		<h2 class="text-4xl font-extrabold text-white sm:text-5xl">Contact Me</h2>
+		<p class="mt-4 text-lg text-zinc-400">
+			Feel free to reach out if you have any questions or want to collaborate.
+		</p>
+	</div>
 
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>Form</Card.Title>
-				<Card.Description>
-					Please fill out the form below and I'll get back to you as soon as possible.
-				</Card.Description>
-			</Card.Header>
-			<Card.Content>
-				<ContactFormData data={data.form} />
-			</Card.Content>
-		</Card.Root>
+	<div class="mx-auto mt-12 max-w-2xl rounded-xl bg-zinc-900 p-8 shadow-xl">
+		<form class="grid grid-cols-1 gap-6 sm:grid-cols-2" use:enhance method="POST">
+			<div class="col-span-2">
+				{@render field('name', 'Name', 'text', true)}
+				{@render errs({ name: 'name' })}
+			</div>
+
+			<div class="col-span-2">
+				{@render field('phone', 'Phone', 'tel', false)}
+				{@render errs({ name: 'phone' })}
+			</div>
+
+			<div class="col-span-2">
+				{@render field('email', 'Email', 'email', true)}
+				{@render errs({ name: 'email' })}
+			</div>
+
+			<div class="col-span-2">
+				{@render field('message', 'Message', 'textarea', true)}
+				{@render errs({ name: 'message' })}
+			</div>
+
+			<div class="col-span-2 flex justify-center">
+				<button
+					type="submit"
+					class="w-full rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none sm:w-auto"
+				>
+					Send Message
+				</button>
+			</div>
+
+			{#if form?.success}
+				<div class="col-span-2">
+					<p class="text-green-500">Message sent successfully!</p>
+				</div>
+			{/if}
+		</form>
 	</div>
 </div>
+
+<!-- Snippets -->
+
+{#snippet errs({ name }: { name: string })}
+	{#if form?.errors}
+		{#each form.errors.filter((err: { field: string }) => err.field === name) as err}
+			<p class="mt-1 text-sm text-red-500">{err.message}</p>
+		{/each}
+	{/if}
+{/snippet}
+
+{#snippet field(name: string, label: string, type: string, required: boolean)}
+	<div class="col-span-2">
+		<label for={name} class="text-sm text-zinc-400">
+			{label}
+			{#if required}<span class="text-red-500">*</span>{/if}
+		</label>
+		{#if type === 'textarea'}
+			<textarea
+				id={name}
+				{name}
+				rows="4"
+				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+			></textarea>
+		{:else}
+			<input
+				id={name}
+				{type}
+				{name}
+				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+			/>
+		{/if}
+	</div>
+{/snippet}

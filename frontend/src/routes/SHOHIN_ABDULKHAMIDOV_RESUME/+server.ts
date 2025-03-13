@@ -1,4 +1,4 @@
-import { generate } from '@/features'
+import generate from "@/lib/utils/pdf-generate-resume"
 
 export async function GET() {
 	const url = 'https://pub-c1d83372ed0146a9ae11bca340543efb.r2.dev/resume.pdf'
