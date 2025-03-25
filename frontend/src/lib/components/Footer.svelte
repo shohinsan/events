@@ -19,8 +19,8 @@
 </script>
 
 <footer class="flex-none">
-	<div class="border-secondary border-t pt-10 pb-28 sm:pb-10">
-		<div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+	<div class="border-t border-zinc-700/40 pb-28 pt-10 sm:pb-10">
+		<div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
 			<div class="flex flex-wrap justify-center gap-y-1 text-sm font-medium">
 				{#each navigations as { href, name }}
 					<li

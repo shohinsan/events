@@ -33,7 +33,7 @@
 <div class="font-sfo flex overflow-y-scroll">
 	<div class="fixed inset-0 flex justify-center overflow-y-scroll sm:px-8">
 		<div class="flex w-full max-w-7xl lg:px-8">
-			<div class="ring-muted h-max w-full ring-1">
+			<div class=" h-max w-full">
 				<Navbar />
 				<div class="relative flex w-full flex-col">
 					<main class="mx-10 flex-auto md:mx-20">

@@ -12,7 +12,7 @@
 	<meta name="Description" content="Get in touch with Shohin" />
 </svelte:head>
 
-<div class="container mx-auto px-6 py-16 sm:py-24 lg:py-32">
+<div class="mx-auto py-16 sm:py-24 lg:py-32">
 	<div class="mx-auto max-w-2xl text-center">
 		<h2 class="text-4xl font-extrabold text-white sm:text-5xl">Contact Me</h2>
 		<p class="mt-4 text-lg text-zinc-400">
@@ -20,7 +20,7 @@
 		</p>
 	</div>
 
-	<div class="mx-auto mt-12 max-w-2xl rounded-xl bg-zinc-900 p-8 shadow-xl">
+	<div class="mx-auto my-12 w-full rounded-xl bg-zinc-900 p-8 md:max-w-2xl">
 		<form class="grid grid-cols-1 gap-6 sm:grid-cols-2" use:enhance method="POST">
 			<div class="col-span-2">
 				{@render field('name', 'Name', 'text', true)}
@@ -45,7 +45,7 @@
 			<div class="col-span-2 flex justify-center">
 				<button
 					type="submit"
-					class="w-full rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-400 focus:outline-none sm:w-auto"
+					class="w-full rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition duration-300 ease-in-out hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 sm:w-auto"
 				>
 					Send Message
 				</button>
@@ -74,21 +74,21 @@
 	<div class="col-span-2">
 		<label for={name} class="text-sm text-zinc-400">
 			{label}
-			{#if required}<span class="text-red-500">*</span>{/if}
+			{#if required}<span class="after:ml-0.5 after:text-red-500 after:content-['*']"></span>{/if}
 		</label>
 		{#if type === 'textarea'}
 			<textarea
 				id={name}
 				{name}
 				rows="4"
-				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
 			></textarea>
 		{:else}
 			<input
 				id={name}
 				{type}
 				{name}
-				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+				class="mt-2 w-full rounded-lg bg-zinc-800 p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
 			/>
 		{/if}
 	</div>
