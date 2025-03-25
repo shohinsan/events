@@ -13,27 +13,25 @@
 	}
 </script>
 
-<header id="logo" class="relative mx-auto flex items-center justify-between p-4 shadow transition">
+<header id="logo" class="relative mx-auto hidden justify-between p-4 transition md:flex">
 	{@render logo()}
 	<nav
-		class="hidden items-center rounded-full bg-zinc-800/90 px-3 text-sm font-medium shadow-lg ring-2 ring-zinc-900/5 backdrop-blur sm:flex"
+		class="hidden rounded-full bg-zinc-800/90 px-3 text-sm font-medium ring-2 ring-zinc-900/5 backdrop-blur md:inline-flex"
 	>
 		{@render navigation({ icons: false })}
 	</nav>
 </header>
 
-<div class="border-secondary bg-secondary fixed bottom-0 left-0 z-50 w-full border-t sm:hidden">
-	<div class="mx-auto grid h-16 max-w-lg grid-cols-3">
+<div class="fixed bottom-0 left-0 z-50 w-full border-t border-zinc-900 md:hidden">
+	<div class="mx-auto grid h-16 w-full grid-cols-3">
 		{@render navigation({ icons: true })}
 	</div>
 </div>
 
 {#snippet logo()}
-	<div class="flex items-center">
-		<a href="/" class="flex items-center">
-			<span class="font-graffiti hover:text-primary ml-10 w-[130px] text-3xl font-bold sm:ml-16">
-				Shohin A
-			</span>
+	<div class="flex">
+		<a href="/" class="flex">
+			<span class="font-graffiti hover:text-primary w-[200px] text-3xl font-bold"> Shohin A </span>
 		</a>
 	</div>
 {/snippet}
@@ -44,7 +42,7 @@
 			onclick={icons ? scrollToTop : undefined}
 			{href}
 			class="transition-colors duration-200 {icons
-				? 'flex flex-col items-center justify-center bg-zinc-600 p-2 text-sm leading-6'
+				? 'flex flex-col items-center justify-center bg-zinc-700 p-2 text-sm leading-6'
 				: 'px-4 py-2'}
 				{page.url.pathname === href ? 'text-primary' : 'hover:text-primary'}"
 			aria-label={name}
@@ -60,3 +58,5 @@
 		</a>
 	{/each}
 {/snippet}
+
+<!-- after:ml-0.5 after:text-red-500 after:content-['*'] -->
