@@ -40,5 +40,3 @@ delete-git:
 # perntodo=# create user dumbelco password 'supersecret';
 # perntodo=# grant connect on database perntodo to dumbelco;
 # perntodo=# grant create,usage on schema public to dumbelco;
-
-

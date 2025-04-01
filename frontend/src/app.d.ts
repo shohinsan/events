@@ -1,28 +1,13 @@
+// See https://svelte.dev/docs/kit/types#app.d.ts
+// for information about these interfaces
 declare global {
 	namespace App {
-		interface Error {
-			code?: string;
-			errorId?: string;
-		}
-
-		interface Locals {
-			locale?: string;
-		}
-
+		// interface Error {}
+		// interface Locals {}
 		// interface PageData {}
+		// interface PageState {}
 		// interface Platform {}
-	}
-
-	declare interface Window {
-		'ga-disable-G-XMWD9Z9L3P': boolean;
-		fbq: (...args: unknown[]) => void;
-		gtag: (...args: unknown[]) => void;
-		clarity: (...args: unknown[]) => void;
-	}
-
-	declare interface Document {
-		startViewTransition(callback: () => void): void;
 	}
 }
 
-export { Window, Document };
+export {};
