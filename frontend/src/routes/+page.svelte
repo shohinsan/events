@@ -9,7 +9,7 @@
 				"A software engineer from California. Have experience using Golang, React, Tailwind and more. Looking for new and exciting projects in the software space. Let's connect! ",
 			avatar: 'https://pub-c1d83372ed0146a9ae11bca340543efb.r2.dev/me.png',
 			socials: {
-				x: 'https://twitter.com/shohinx',
+				x: 'https://x.com/shohinx',
 				email: 'abd.shohin@gmail.com',
 				linkedin: 'https://www.linkedin.com/in/shohin-abdulkhamidov',
 				telegram: 'https://t.me/shohinsan',
@@ -107,46 +107,46 @@
 				name: 'MorteSense',
 				technology: 'Python',
 				description: 'DIY motion alert system',
-				link: 'https://clutchmaps.com'
+				link: 'https://github.com/MorteSense'
 			},
 			{
 				name: 'RootsRise',
 				technology: 'Svelte',
 				description: 'Family Tree',
-				link: 'https://clutchmaps.com'
+				link: 'https://abdulkhamidov.pages.dev'
 			},
 			{
 				name: 'FlexRent',
 				technology: 'Figma',
 				description: 'Design system',
-				link: 'https://coastalui.com'
+				link: 'https://www.figma.com/design/c6BSK1vEwPgJe8XVvR69z5/Flexrent?node-id=17-74063&t=fhZPAyUeFdrSb8gR-1https://www.figma.com/design/c6BSK1vEwPgJe8XVvR69z5/Flexrent?node-id=17-74063&t=fhZPAyUeFdrSb8gR-1'
 			},
 			{
 				name: 'Starbucks Enterprise',
 				technology: 'Java',
 				description: 'End-to-end ordering system',
-				link: 'https://clutchmaps.com'
+				link: 'https://github.com/shohinsan/starbucks-enterprise-n-tier'
 			}
 		]
 	});
 </script>
 
-<div class="overflow-x-hidden bg-background flex flex-col justify-center items-center relative">
-	<div class="w-full max-w-[680px] flex flex-col my-24 lg:px-0 px-5 mb-[100px] sm:mb-[200px]">
+<div class="bg-background relative flex flex-col items-center justify-center overflow-x-hidden">
+	<div class="my-24 mb-[100px] flex w-full max-w-[680px] flex-col px-5 sm:mb-[200px] lg:px-0">
 		<Introduction data={portfolioContent.introduction} />
 		<Experience data={portfolioContent.experiences} />
 		<Education data={portfolioContent.education} />
 		<Skills data={portfolioContent.skills} />
 		<div
-			class="w-full h-[1px] bg-gradient-to-r from-zinc-900 to-zinc-900 via-zinc-800 my-12 mb-16"
+			class="my-12 mb-16 h-[1px] w-full bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900"
 		></div>
 		<div class="mb-4 flex flex-col items-center">
-			<div class="text-3xl text-primary font-bold">Personal Projects</div>
-			<div class="text-faint font-thin mt-1">Collected across various projects.</div>
+			<div class="text-primary text-3xl font-bold">Personal Projects</div>
+			<div class="text-faint mt-1 font-thin">Collected across various projects.</div>
 		</div>
 		<Projects data={portfolioContent.projects} />
 	</div>
 	<div
-		class="bg-gradient-to-b from-background to-background-secondary bg-background h-[200px] w-full"
+		class="from-background to-background-secondary bg-background h-[200px] w-full bg-gradient-to-b"
 	></div>
 </div>
