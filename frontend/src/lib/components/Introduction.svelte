@@ -11,17 +11,17 @@
     rounded: lg
 -->
 
-<div class="w-full flex flex-col">
+<div class="flex w-full flex-col">
 	<div
-		class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-5 mt-6 sm:mt-2"
+		class="mt-6 flex flex-col items-center space-y-2 sm:mt-2 sm:flex-row sm:space-x-5 sm:space-y-0"
 	>
-		<div class="flex flex-col sm:flex-row items-center w-full">
+		<div class="flex w-full flex-col items-center sm:flex-row">
 			<img
 				alt="avatar of Jonathan"
 				src={data.avatar}
-				class="sm:h-16 grayscale sm:w-16 w-24 h-24 rounded-full shadow-lg shadow-background-secondary mb-2 sm:mb-0"
+				class="shadow-background-secondary mb-2 h-24 w-24 rounded-full shadow-lg grayscale sm:mb-0 sm:h-16 sm:w-16"
 			/>
-			<div class="flex flex-col items-center sm:items-start sm:ml-4 w-full">
+			<div class="flex w-full flex-col items-center sm:ml-4 sm:items-start">
 				<div class="text-primary text-3xl">{data.name}</div>
 				<div class="text-faint text-sm sm:-mt-[2px]">{data.occupation}</div>
 			</div>
@@ -34,11 +34,11 @@
 			<div class="flex items-center space-x-5 sm:space-x-3">
 				<button
 					aria-label="X Social Media link"
-					onclick={() => window.open(data.xSocialLink, '_blank')}
+					onclick={() => window.open(data.socials.x, '_blank')}
 					class="cursor-pointer"
 				>
 					<svg
-						class="h-11 w-11 p-1 sm:p-0 sm:h-5 sm:w-5 text-faint hover:text-secondary"
+						class="text-faint hover:text-secondary h-11 w-11 p-1 sm:h-5 sm:w-5 sm:p-0"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
 						><path
@@ -47,16 +47,16 @@
 						/></svg
 					>
 				</button>
-				<div class="h-5 sm:h-3.5 w-[1px] bg-faint/50"></div>
+				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
 
 				<!-- Steam icon with better styling -->
 				<button
 					aria-label="Steam link"
-					onclick={() => window.open(data.steamLink, '_blank')}
+					onclick={() => window.open(data.socials.steam, '_blank')}
 					class="cursor-pointer"
 				>
 					<svg
-						class="size-9 sm:h-5 sm:w-5 text-faint hover:text-secondary rounded-full"
+						class="text-faint hover:text-secondary size-9 rounded-full sm:h-5 sm:w-5"
 						fill="currentColor"
 						viewBox="0 0 24 24"
 					>
@@ -66,15 +66,15 @@
 					>
 				</button>
 
-				<div class="h-5 sm:h-3.5 w-[1px] bg-faint/50"></div>
+				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
 
 				<!-- Telegram icon with better styling -->
 				<button
 					aria-label="Telegram link"
-					onclick={() => window.open(data.telegramLink, '_blank')}
+					onclick={() => window.open(data.socials.telegram, '_blank')}
 					class="cursor-pointer"
 				>
-					<svg class="h-11 w-11 sm:h-6 sm:w-6 text-faint hover:text-secondary" viewBox="0 0 24 24">
+					<svg class="text-faint hover:text-secondary h-11 w-11 sm:h-6 sm:w-6" viewBox="0 0 24 24">
 						<path
 							fill="currentColor"
 							d="M11.99 2C6.472 2 2 6.473 2 12c0 5.528 4.472 10 9.99 10c5.527 0 10.01-4.472 10.01-10C22 6.473 17.517 2 11.99 2zm4.595 7.428l-1.76 8.27c-.131.59-.483.736-.977.459l-2.705-1.991l-1.304 1.256c-.145.144-.266.266-.543.266l.193-2.744l4.994-4.506c.217-.194-.047-.301-.335-.107l-6.173 3.884l-2.661-.83c-.578-.184-.59-.578.12-.85l10.378-4c.485-.177.91.113.773.893z"
@@ -84,27 +84,27 @@
 			</div>
 
 			<!-- Second Row: 3 Links -->
-			<div class="flex items-center space-x-5 sm:space-x-3 justify-center">
+			<div class="flex items-center justify-center space-x-5 sm:space-x-3">
 				<button
 					aria-label="GitHub link"
-					onclick={() => window.open(data.githubLink, '_blank')}
+					onclick={() => window.open(data.socials.github, '_blank')}
 					class="cursor-pointer"
 				>
-					<svg class="h-11 w-11 sm:h-6 sm:w-6 text-faint hover:text-secondary" viewBox="0 0 24 24">
+					<svg class="text-faint hover:text-secondary h-11 w-11 sm:h-6 sm:w-6" viewBox="0 0 24 24">
 						<path
 							fill="currentColor"
 							d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.09.66-.21.66-.47v-1.64c-2.78.6-3.37-1.34-3.37-1.34c-.45-1.15-1.11-1.46-1.11-1.46c-.91-.62.07-.61.07-.61c1 .07 1.53 1.03 1.53 1.03c.89 1.52 2.34 1.08 2.91.83c.09-.65.35-1.08.64-1.33c-2.22-.25-4.56-1.11-4.56-4.94c0-1.09.39-1.98 1.03-2.68c-.1-.25-.45-1.27.1-2.65c0 0 .84-.27 2.75 1.02c.8-.22 1.66-.33 2.51-.33c.85 0 1.71.11 2.51.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.38.2 2.4.1 2.65c.64.7 1.03 1.59 1.03 2.68c0 3.84-2.34 4.69-4.56 4.94c.36.31.68.92.68 1.86v2.76c0 .27.16.58.67.47C19.13 20.17 22 16.42 22 12c0-5.52-4.48-10-10-10z"
 						/>
 					</svg>
 				</button>
-				<div class="h-5 sm:h-3.5 w-[1px] bg-faint/50"></div>
+				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
 				<button
 					aria-label="LinkedIn Social Media link"
-					onclick={() => window.open(data.linkedInSocialLink, '_blank')}
+					onclick={() => window.open(data.socials.linkedin, '_blank')}
 					class="cursor-pointer"
 				>
 					<svg
-						class="h-11 w-11 sm:h-6 sm:w-6 text-faint hover:text-secondary"
+						class="text-faint hover:text-secondary h-11 w-11 sm:h-6 sm:w-6"
 						viewBox="0 0 1024 1024"
 						><path
 							fill="currentColor"
@@ -116,7 +116,7 @@
 		</div>
 	</div>
 
-	<div id="aboutSection" class="flex flex-col justify-start w-full mt-16">
+	<div id="aboutSection" class="mt-16 flex w-full flex-col justify-start">
 		<div class="text-faint text-xs font-extrabold uppercase">About</div>
 		<div class="text-primary mt-3">{data.description}</div>
 	</div>
