@@ -110,10 +110,10 @@
 				link: 'https://github.com/MorteSense'
 			},
 			{
-				name: 'RootsRise',
+				name: 'Aerie',
 				technology: 'Svelte',
 				description: 'Family Tree',
-				link: 'https://abdulkhamidov.pages.dev'
+				link: 'https://aerie.pages.dev'
 			},
 			{
 				name: 'FlexRent',
