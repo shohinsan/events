@@ -13,7 +13,7 @@
 				email: 'abd.shohin@gmail.com',
 				linkedin: 'https://www.linkedin.com/in/shohinx',
 				telegram: 'https://t.me/shohinx',
-				steam: 'https://steamcommunity.com/id/shohinsan',
+				steam: 'https://steamcommunity.com/id/shohinx',
 				github: 'https://www.github.com/shohinsan'
 			}
 		},
