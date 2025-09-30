@@ -1,17 +1,21 @@
-# LifeEvents
-Portfolio Website
+# Personal Portfolio Website
 
-# Enable Git Hoosk On .git Location
-git config --global core.hookspath .githooks
+This is a **personal portfolio website** built using [Svelte](https://svelte.dev/).  
 
-app — app-wide settings, styles and providers.
+The project showcases skills, experience, and projects in a clean and responsive design.  
 
-pages/routes — compositional layer to construct full pages from entities, features and widgets.
+## Features
+- Built with **Svelte** for fast, lightweight performance  
+- **Responsive design** for desktop and mobile  
+- Easy to customize and extend  
 
-widgets — compositional layer to combine entities and features into meaningful blocks. (e.g. IssuesList, UserProfile).
+## Getting Started
+Clone the repository and install dependencies:
 
-features — user interactions, actions that bring business value to the user. (e.g. SendComment, AddToCart, UsersSearch).
+```bash
+git clone <your-repo-url>
+cd <your-repo-folder>
+npm install
+npm run dev
+```
 
-entities — business entities. (e.g., User, Product, Order).
-
-shared — reusable functionality, detached from the specifics of the project/business. (e.g. UIKit, libs, API)/.
