@@ -16,14 +16,16 @@
 		class="mt-6 flex flex-col items-center space-y-2 sm:mt-2 sm:flex-row sm:space-x-5 sm:space-y-0"
 	>
 		<div class="flex w-full flex-col items-center sm:flex-row">
-			<img
-				alt="avatar of Jonathan"
-				src={data.avatar}
-				class="shadow-background-secondary mb-2 h-24 w-24 rounded-full shadow-lg grayscale sm:mb-0 sm:h-16 sm:w-16"
-			/>
+			<div class="mb-2 shrink-0 rounded-full sm:mb-0">
+				<img
+					alt="avatar of {data.name}"
+					src={data.avatar}
+					class="h-24 w-24 rounded-full object-cover object-top grayscale sm:h-16 sm:w-16"
+				/>
+			</div>
 			<div class="flex w-full flex-col items-center sm:ml-4 sm:items-start">
 				<div class="text-primary text-3xl">{data.name}</div>
-				<div class="text-faint text-sm sm:-mt-[2px]">{data.occupation}</div>
+				<div class="text-faint text-sm sm:-mt-0.5">{data.occupation}</div>
 			</div>
 		</div>
 
@@ -47,7 +49,7 @@
 						/></svg
 					>
 				</button>
-				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
+				<div class="bg-faint/50 h-5 w-px sm:h-3.5"></div>
 
 				<!-- Steam icon with better styling -->
 				<button
@@ -66,7 +68,7 @@
 					>
 				</button>
 
-				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
+				<div class="bg-faint/50 h-5 w-px sm:h-3.5"></div>
 
 				<!-- Telegram icon with better styling -->
 				<button
@@ -97,7 +99,7 @@
 						/>
 					</svg>
 				</button>
-				<div class="bg-faint/50 h-5 w-[1px] sm:h-3.5"></div>
+				<div class="bg-faint/50 h-5 w-px sm:h-3.5"></div>
 				<button
 					aria-label="LinkedIn Social Media link"
 					onclick={() => window.open(data.socials.linkedin, '_blank')}
