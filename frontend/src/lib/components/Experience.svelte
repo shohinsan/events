@@ -14,20 +14,20 @@
                         class="h-12 w-12 rounded-full shrink-0"
                     />
                     {#if index !== data.length - 1}
-                        <div class="w-[2px] grow bg-background-tertiary"></div>
+                        <div class="w-0.5 grow bg-background-tertiary"></div>
                     {/if}
                 </div>
                 <div class="flex ml-3 flex-col grow pb-14">
-                    <div class="flex justify-between items-center w-full h-12">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center w-full min-h-12">
                         <div class="flex flex-col justify-start items-start">
-                        <div class="text-primary text-xl font-semibold">
+                        <div class="text-primary text-lg sm:text-xl font-semibold">
                             {experience.company}
                         </div>
                         <div class="text-faint text-sm">
                             {experience.role}
                         </div>
                         </div>
-                        <div class="text-tertiary text-sm flex items-center">
+                        <div class="text-tertiary text-sm flex items-center mt-1 sm:mt-0">
                         {#if experience.duration === "Present"}
                             <div class="bg-green-600 w-1.5 border-green-700 animate-pulse h-1.5 rounded-full mr-2"></div>
                         {/if}

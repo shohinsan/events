@@ -16,16 +16,16 @@
                 />
             </div>
             <div class="flex ml-3 flex-col grow pb-14">
-                <div class="flex justify-between items-center w-full h-12">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center w-full min-h-12">
                     <div class="flex flex-col justify-start items-start">
-                        <div class="text-primary text-xl font-semibold">
+                        <div class="text-primary text-lg sm:text-xl font-semibold">
                             {data.school}
                         </div>
-                        <div class="text-faint text-xs -mt-[1px]">
+                        <div class="text-faint text-xs -mt-px">
                             {data.degree}
                         </div>
                     </div>
-                    <div class="text-tertiary text-sm flex items-center">
+                    <div class="text-tertiary text-sm flex items-center mt-1 sm:mt-0">
                         {data.graduationYear}
                     </div>
                 </div>
