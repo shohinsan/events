@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { data } = $props<{ data: { icon: string; text: string }[] }>();
+	let { data } = $props();
 </script>
 
 <div id="skillsSection" class="flex flex-col justify-start w-full">
